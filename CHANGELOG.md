@@ -20,6 +20,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.5] - 2025-10-27
+
+### Fixed
+- Fixed "Block contains unexpected or invalid content" errors in pattern blocks
+- Corrected JSON attribute ordering in block markup (WordPress prefers color/text before style)
+- Added missing textColor attributes to buttons for proper contrast
+- Added explicit level attribute to heading blocks
+- Changed inline font-size style to use theme.json fontSize preset (sm) in CTA pattern
+- All patterns now validate correctly in the block editor
+
+### Changed
+- Hero pattern: Reordered block attributes, added textColor="base" to second button
+- CTA Newsletter pattern: Reordered attributes, added textColor="base" to button, changed small text to use "sm" fontSize
+
 ## [1.0.0-beta.4] - 2025-10-27
 
 ### Fixed

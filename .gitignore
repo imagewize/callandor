@@ -1,0 +1,60 @@
+# WordPress
+.htaccess
+*.log
+
+# Composer
+/vendor/
+composer.lock
+
+# IDE & Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Node modules (if using npm for assets)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+*.map
+*.min.css
+*.min.js
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PHPUnit
+.phpunit.result.cache
+/tests/_output/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.backup
+*-backup
+
+# Compressed files (unless intentionally added)
+*.zip
+*.tar.gz
+*.rar

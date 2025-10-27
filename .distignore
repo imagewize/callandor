@@ -1,0 +1,84 @@
+# Callandor Distribution Ignore
+# Files/directories excluded from release ZIP
+
+# Version Control
+.git
+.gitattributes
+.gitignore
+
+# GitHub
+.github
+
+# Development files
+composer.json
+composer.lock
+phpcs.xml
+phpcs.xml.dist
+phpstan.neon
+phpstan.neon.dist
+.phpcs.xml
+.phpcs.xml.dist
+
+# Documentation (keep README.md and CHANGELOG.md)
+docs/
+CLAUDE.md
+
+# Node/NPM (if added later)
+node_modules
+package.json
+package-lock.json
+yarn.lock
+
+# Tests
+tests/
+phpunit.xml
+phpunit.xml.dist
+.phpunit.result.cache
+
+# IDE & Editor
+.idea
+.vscode
+.vs
+*.sublime-project
+*.sublime-workspace
+.project
+.settings
+.classpath
+.factorypath
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.backup
+*-backup
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts (if added later)
+dist/
+build/
+*.map
+
+# Vendor dev dependencies (handled by composer install --no-dev)
+# But keep this here for reference
+vendor/phpstan/
+vendor/squizlabs/
+vendor/wp-coding-standards/

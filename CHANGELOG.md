@@ -20,6 +20,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.3] - 2025-10-27
+
+### Fixed
+- Fatal error caused by missing WordPress block pattern functions
+- Added function_exists() checks for register_block_pattern_category() and register_block_pattern()
+- Plugin now gracefully handles WordPress environments that don't have block pattern support
+- Prevents white screen of death on plugin activation
+
+### Technical Details
+- The beta.2 fix only checked for WP_Block_Pattern_Categories_Registry class existence
+- This didn't prevent calls to register_block_pattern_category() function which may not exist
+- Now checks for both function existence before attempting registration
+- Plugin silently returns if block pattern functions are not available
+
 ## [1.0.0-beta.2] - 2025-10-27
 
 ### Fixed

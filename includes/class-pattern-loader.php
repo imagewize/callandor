@@ -59,14 +59,19 @@ class Callandor_Pattern_Loader {
 	 * Register custom pattern categories.
 	 */
 	public function register_pattern_categories() {
+		// Check if the function exists (WP 5.5+)
+		if ( ! function_exists( 'register_block_pattern_category' ) ) {
+			return;
+		}
+
 		foreach ( $this->categories as $slug => $args ) {
-			// Check if the class exists (WP 5.5+)
+			// Check if the class exists before trying to use it
 			if ( class_exists( '\WP_Block_Pattern_Categories_Registry' ) ) {
 				if ( ! \WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $slug ) ) {
 					register_block_pattern_category( $slug, $args );
 				}
 			} else {
-				// Fallback for older WordPress versions
+				// Fallback for older WordPress versions - just register without checking
 				register_block_pattern_category( $slug, $args );
 			}
 		}
@@ -76,6 +81,11 @@ class Callandor_Pattern_Loader {
 	 * Register all patterns from the patterns directory.
 	 */
 	public function register_patterns() {
+		// Check if the function exists (WP 5.5+)
+		if ( ! function_exists( 'register_block_pattern' ) ) {
+			return;
+		}
+
 		$pattern_dirs = glob( CALLANDOR_PLUGIN_DIR . 'patterns/*', GLOB_ONLYDIR );
 
 		if ( empty( $pattern_dirs ) ) {

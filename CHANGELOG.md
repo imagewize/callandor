@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Planned for 1.0.0 Stable
 - Community testing and feedback
-- Bug fixes from beta testing
 - Performance optimizations
 - Additional pattern examples
 
@@ -20,6 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-update functionality
 - Additional pattern categories
 - Pattern preview in admin interface
+
+## [1.0.0-beta.2] - 2025-10-27
+
+### Fixed
+- Fatal error caused by missing WP_Block_Pattern_Categories_Registry class in some WordPress environments
+- Added class_exists() check before using WP_Block_Pattern_Categories_Registry to ensure compatibility
 
 ## [1.0.0-beta.1] - 2024-10-27
 

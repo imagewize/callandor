@@ -60,7 +60,13 @@ class Callandor_Pattern_Loader {
 	 */
 	public function register_pattern_categories() {
 		foreach ( $this->categories as $slug => $args ) {
-			if ( ! \WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $slug ) ) {
+			// Check if the class exists (WP 5.5+)
+			if ( class_exists( '\WP_Block_Pattern_Categories_Registry' ) ) {
+				if ( ! \WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $slug ) ) {
+					register_block_pattern_category( $slug, $args );
+				}
+			} else {
+				// Fallback for older WordPress versions
 				register_block_pattern_category( $slug, $args );
 			}
 		}

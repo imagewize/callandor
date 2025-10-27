@@ -20,6 +20,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.4] - 2025-10-27
+
+### Fixed
+- **CRITICAL**: Removed autoload section from composer.json that was causing immediate plugin execution
+- The autoload section was loading callandor.php outside of WordPress context during composer install
+- This caused fatal errors because WordPress functions were not available
+- WordPress plugins should be loaded by WordPress, not by Composer's autoloader
+
+### Technical Details
+- Beta.2 and Beta.3 tried to fix function/class existence checks, but the real issue was Composer autoload
+- When running `composer require imagewize/callandor`, Composer's autoloader would immediately execute callandor.php
+- This happened before WordPress was loaded, causing calls to plugin_dir_path(), add_action(), etc. to fail
+- Removed the entire autoload section - WordPress handles plugin loading via wp-content/plugins/
+- The composer/installers package is sufficient to place the plugin in the correct directory
+
 ## [1.0.0-beta.3] - 2025-10-27
 
 ### Fixed

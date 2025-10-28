@@ -13,18 +13,20 @@ return array(
 	'categories'    => array( 'features' ),
 	'keywords'      => array( 'features', 'services', 'grid', 'columns', 'benefits' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-tertiary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-	<!-- wp:heading {"textAlign":"center","fontSize":"5xl"} -->
-	<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size">' . __( 'Why Businesses Choose Us', 'callandor' ) . '</h2>
-	<!-- /wp:heading -->
+	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"tertiary","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull has-tertiary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)">
+		<!-- wp:heading {"textAlign":"center","fontSize":"5xl"} -->
+		<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size">' . __( 'Why Businesses Choose Us', 'callandor' ) . '</h2>
+		<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"fontSize":"lg"} -->
-	<p class="has-text-align-center has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'We deliver results that matter to your bottom line', 'callandor' ) . '</p>
-	<!-- /wp:paragraph -->
+		<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"fontSize":"lg"} -->
+		<p class="has-text-align-center has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'We deliver results that matter to your bottom line', 'callandor' ) . '</p>
+		<!-- /wp:paragraph -->
 
-	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-	<div class="wp-block-columns">
+		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+		<div class="wp-block-columns">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"level":3,"textColor":"primary","fontSize":"3xl"} -->
@@ -60,8 +62,10 @@ return array(
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
 	</div>
-	<!-- /wp:columns -->
+	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->',
 );

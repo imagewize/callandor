@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.8
+Stable tag: 1.0.0-beta.9
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,17 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 1.0.0-beta.9 - 2025-10-28 =
+* CRITICAL: Fixed full-width block padding issue affecting all pattern sections
+* Pattern sections with align="full" no longer touch viewport edges on full-width layouts
+* Restructured all patterns with nested groups: outer full-width with vertical padding, inner constrained with horizontal padding
+* All patterns now properly respect responsive var:preset|spacing|50 horizontal padding (2rem → 3rem)
+* Content properly centers within 55rem max-width from theme.json
+* Matches Nynaeve theme's architecture and follows WordPress modern theme approach
+* All 8 patterns restructured: contact, cta, features, hero (both), pricing, team, testimonials
+* Follows WordPress useRootPaddingAwareAlignments standard
+* All patterns pass WordPress Coding Standards (PHPCS) validation
 
 = 1.0.0-beta.8 - 2025-10-28 =
 * CRITICAL: Fixed "Block contains unexpected or invalid content" errors in Team Grid pattern

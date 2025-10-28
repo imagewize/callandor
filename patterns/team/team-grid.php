@@ -27,8 +27,8 @@ return array(
 	<div class="wp-block-columns">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":{"top":"8px","left":"8px","right":"8px"}}}} -->
-			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;border-bottom-left-radius:8px"/></figure>
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-radius:8px"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
@@ -51,8 +51,8 @@ return array(
 
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":{"top":"8px","left":"8px","right":"8px"}}}} -->
-			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;border-bottom-left-radius:8px"/></figure>
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-radius:8px"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
@@ -75,8 +75,8 @@ return array(
 
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":{"top":"8px","left":"8px","right":"8px"}}}} -->
-			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;border-bottom-left-radius:8px"/></figure>
+			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
+			<figure class="wp-block-image size-large has-custom-border"><img src="https://via.placeholder.com/400x400/017cb6/ffffff?text=Team+Member" alt="' . esc_attr__( 'Team member photo', 'callandor' ) . '" style="border-radius:8px"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->

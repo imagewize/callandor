@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.7
+Stable tag: 1.0.0-beta.8
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -119,6 +119,13 @@ Yes! This is an open-source project. Visit our GitHub repository to contribute p
 6. Pricing table comparison pattern
 
 == Changelog ==
+
+= 1.0.0-beta.8 - 2025-10-28 =
+* CRITICAL: Fixed "Block contains unexpected or invalid content" errors in Team Grid pattern
+* Image blocks were using incomplete border-radius object format
+* Changed all image blocks to use simple string format for border-radius
+* Pattern now loads correctly in WordPress block editor without validation errors
+* Added documentation to CLAUDE.md for proper image block formatting
 
 = 1.0.0-beta.7 - 2025-10-28 =
 * Added Hero Two-Tone pattern with modern design elements

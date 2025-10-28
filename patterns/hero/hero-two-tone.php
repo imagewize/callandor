@@ -44,7 +44,7 @@ return array(
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"12px"}}} -->
-			<figure class="wp-block-image size-large has-custom-border"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200" alt="' . esc_attr__( 'Hero background', 'callandor' ) . '" style="border-radius:12px"/></figure>
+			<figure class="wp-block-image size-large has-custom-border"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop" alt="' . esc_attr__( 'Hero background', 'callandor' ) . '" style="border-radius:12px"/></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->

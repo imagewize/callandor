@@ -20,6 +20,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.8] - 2025-10-28
+
+### Fixed
+- **CRITICAL**: Fixed "Block contains unexpected or invalid content" errors in Team Grid pattern
+  - Image blocks were using incomplete border-radius object format missing the "bottom" property
+  - Changed all image blocks to use simple string format: `"border":{"radius":"8px"}`
+  - Updated inline styles from individual corner properties to unified `border-radius:8px`
+  - Pattern now loads correctly in WordPress block editor without validation errors
+
+### Documentation
+- Added critical guidelines to CLAUDE.md for image block border-radius formatting
+- Documented proper JSON structure to prevent future block validation issues
+- Specified that simple string format must be used instead of object format for border-radius
+
 ## [1.0.0-beta.7] - 2025-10-28
 
 ### Added

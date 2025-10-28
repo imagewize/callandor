@@ -39,7 +39,7 @@ class Callandor_Admin_Settings {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 
-		// Initialize pattern loader for pattern listing
+		// Initialize pattern loader for pattern listing.
 		$this->pattern_loader = new Callandor_Pattern_Loader();
 	}
 
@@ -80,7 +80,7 @@ class Callandor_Admin_Settings {
 			)
 		);
 
-		// Add settings section
+		// Add settings section.
 		add_settings_section(
 			'callandor_general_section',
 			__( 'General Settings', 'callandor' ),
@@ -88,7 +88,7 @@ class Callandor_Admin_Settings {
 			$this->page_slug
 		);
 
-		// License key field
+		// License key field.
 		add_settings_field(
 			'callandor_license_key',
 			__( 'License Key', 'callandor' ),
@@ -147,8 +147,8 @@ class Callandor_Admin_Settings {
 			return;
 		}
 
-		// Handle form submission
-		if ( isset( $_GET['settings-updated'] ) ) {
+		// Handle form submission.
+		if ( isset( $_GET['settings-updated'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			add_settings_error(
 				'callandor_messages',
 				'callandor_message',
@@ -215,16 +215,16 @@ class Callandor_Admin_Settings {
 	 * Render the pattern library browser.
 	 */
 	private function render_pattern_library() {
-		$patterns           = $this->pattern_loader->get_patterns();
-		$categories         = $this->pattern_loader->get_categories();
-		$disabled_patterns  = get_option( 'callandor_disabled_patterns', array() );
+		$patterns          = $this->pattern_loader->get_patterns();
+		$categories        = $this->pattern_loader->get_categories();
+		$disabled_patterns = get_option( 'callandor_disabled_patterns', array() );
 
 		if ( empty( $patterns ) ) {
 			echo '<p class="description">' . esc_html__( 'No patterns found. Add pattern files to the patterns directory.', 'callandor' ) . '</p>';
 			return;
 		}
 
-		// Group patterns by category
+		// Group patterns by category.
 		$patterns_by_category = array();
 		foreach ( $patterns as $pattern ) {
 			$category = $pattern['category'];
@@ -247,7 +247,7 @@ class Callandor_Admin_Settings {
 					<div class="callandor-pattern-grid">
 						<?php foreach ( $category_patterns as $pattern ) : ?>
 							<?php
-							$is_disabled = in_array( $pattern['slug'], $disabled_patterns, true );
+							$is_disabled   = in_array( $pattern['slug'], $disabled_patterns, true );
 							$pattern_class = $is_disabled ? 'callandor-pattern-card disabled' : 'callandor-pattern-card';
 							?>
 							<div class="<?php echo esc_attr( $pattern_class ); ?>">

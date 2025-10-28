@@ -20,6 +20,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.6] - 2025-10-27
+
+### Added
+- New Contact Information Section pattern with professional 3-column card layout
+  - Office hours, contact details (phone/email), and physical address
+  - Modern card design with subtle borders and border-radius (8px)
+  - CTA button for scheduling consultations
+  - Professional typography hierarchy (5xl heading, xl subheading, lg body text)
+  - Proper spacing using Nynaeve theme spacing scale (20, 40, 50, 60)
+  - Uses theme color system (primary, main, main-accent, tertiary, base)
+- New Team Member Grid pattern with professional team profiles
+  - 3-column layout with placeholder images
+  - Name (2xl), role (base), and bio for each team member
+  - Clean white cards on tertiary background
+  - Rounded image corners (8px) for modern aesthetic
+  - Consistent spacing and margin control throughout
+  - Professional, ROI-focused business copy
+- Created custom phpcs.xml configuration file for WordPress Coding Standards
+- Updated composer.json scripts to use phpcs.xml configuration
+
+### Fixed
+- **WordPress.org Compliance**: Renamed class files to follow WordPress.org plugin repository standards
+  - `class-pattern-loader.php` → `class-callandor-pattern-loader.php`
+  - `class-admin-settings.php` → `class-callandor-admin-settings.php`
+  - File naming now matches class names with plugin prefix (required for WordPress.org submission)
+- Fixed all WordPress Coding Standards violations:
+  - Added periods to end all inline comments
+  - Added proper DocBlock with @param tag for `callandor_admin_enqueue_scripts()`
+  - Added phpcs:ignore comment for WordPress-handled form submission check
+  - Fixed spacing and alignment issues throughout codebase
+- Updated require_once statements in main plugin file to use new class filenames
+
+### Technical
+- Contact and Team pattern categories now populated (previously empty directories)
+- Both new patterns use consistent `var:preset|spacing` tokens
+- Total pattern count increased from 5 to 7 patterns
+- All files now pass WordPress Coding Standards (WPCS) checks without exceptions
+- phpcs.xml excludes: vendor/, node_modules/, assets/, languages/, docs/, wordpress-stubs.php
+- Plugin is now fully compliant with WordPress.org plugin repository requirements
+
 ## [1.0.0-beta.5] - 2025-10-27
 
 ### Fixed

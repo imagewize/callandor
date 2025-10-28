@@ -59,19 +59,19 @@ class Callandor_Pattern_Loader {
 	 * Register custom pattern categories.
 	 */
 	public function register_pattern_categories() {
-		// Check if the function exists (WP 5.5+)
+		// Check if the function exists (WP 5.5+).
 		if ( ! function_exists( 'register_block_pattern_category' ) ) {
 			return;
 		}
 
 		foreach ( $this->categories as $slug => $args ) {
-			// Check if the class exists before trying to use it
+			// Check if the class exists before trying to use it.
 			if ( class_exists( '\WP_Block_Pattern_Categories_Registry' ) ) {
 				if ( ! \WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $slug ) ) {
 					register_block_pattern_category( $slug, $args );
 				}
 			} else {
-				// Fallback for older WordPress versions - just register without checking
+				// Fallback for older WordPress versions - just register without checking.
 				register_block_pattern_category( $slug, $args );
 			}
 		}
@@ -81,7 +81,7 @@ class Callandor_Pattern_Loader {
 	 * Register all patterns from the patterns directory.
 	 */
 	public function register_patterns() {
-		// Check if the function exists (WP 5.5+)
+		// Check if the function exists (WP 5.5+).
 		if ( ! function_exists( 'register_block_pattern' ) ) {
 			return;
 		}
@@ -122,15 +122,15 @@ class Callandor_Pattern_Loader {
 	private function register_pattern_from_file( $file ) {
 		$pattern_data = require $file;
 
-		// Validate pattern data
+		// Validate pattern data.
 		if ( ! is_array( $pattern_data ) || empty( $pattern_data['content'] ) ) {
 			return;
 		}
 
-		// Generate pattern slug from filename
+		// Generate pattern slug from filename.
 		$pattern_slug = 'callandor/' . basename( dirname( $file ) ) . '/' . basename( $file, '.php' );
 
-		// Prepare pattern properties
+		// Prepare pattern properties.
 		$pattern_properties = array(
 			'title'       => isset( $pattern_data['title'] ) ? $pattern_data['title'] : '',
 			'description' => isset( $pattern_data['description'] ) ? $pattern_data['description'] : '',
@@ -139,7 +139,7 @@ class Callandor_Pattern_Loader {
 			'keywords'    => isset( $pattern_data['keywords'] ) ? $pattern_data['keywords'] : array(),
 		);
 
-		// Add optional properties
+		// Add optional properties.
 		if ( isset( $pattern_data['viewportWidth'] ) ) {
 			$pattern_properties['viewportWidth'] = $pattern_data['viewportWidth'];
 		}
@@ -152,7 +152,7 @@ class Callandor_Pattern_Loader {
 			$pattern_properties['inserter'] = $pattern_data['inserter'];
 		}
 
-		// Register the pattern
+		// Register the pattern.
 		register_block_pattern( $pattern_slug, $pattern_properties );
 	}
 
@@ -169,7 +169,7 @@ class Callandor_Pattern_Loader {
 
 		$prefixed_categories = array();
 		foreach ( $pattern_data['categories'] as $category ) {
-			// Add callandor- prefix if not already present
+			// Add callandor- prefix if not already present.
 			if ( strpos( $category, 'callandor-' ) === 0 ) {
 				$prefixed_categories[] = $category;
 			} else {
@@ -195,16 +195,16 @@ class Callandor_Pattern_Loader {
 	 * @return array Registered patterns.
 	 */
 	public function get_patterns() {
-		$patterns       = array();
-		$pattern_dirs   = glob( CALLANDOR_PLUGIN_DIR . 'patterns/*', GLOB_ONLYDIR );
+		$patterns     = array();
+		$pattern_dirs = glob( CALLANDOR_PLUGIN_DIR . 'patterns/*', GLOB_ONLYDIR );
 
 		if ( empty( $pattern_dirs ) ) {
 			return $patterns;
 		}
 
 		foreach ( $pattern_dirs as $pattern_dir ) {
-			$category       = basename( $pattern_dir );
-			$pattern_files  = glob( $pattern_dir . '/*.php' );
+			$category      = basename( $pattern_dir );
+			$pattern_files = glob( $pattern_dir . '/*.php' );
 
 			foreach ( $pattern_files as $pattern_file ) {
 				$pattern_data = require $pattern_file;

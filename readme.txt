@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.1
+Stable tag: 1.0.0-beta.6
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -120,7 +120,20 @@ Yes! This is an open-source project. Visit our GitHub repository to contribute p
 
 == Changelog ==
 
-= 1.0.0 - 2024-01-15 =
+= 1.0.0-beta.6 - 2025-10-27 =
+* Added Contact Information Section pattern with professional 3-column card layout
+* Added Team Member Grid pattern with professional team profiles
+* Contact and Team pattern categories now populated (previously empty)
+* Total pattern count increased from 5 to 7 patterns
+* New patterns feature modern design with 8px border radius and proper spacing
+
+= 1.0.0-beta.5 - 2025-10-27 =
+* Fixed "Block contains unexpected or invalid content" errors in pattern blocks
+* Corrected JSON attribute ordering in block markup
+* Added missing textColor attributes to buttons for proper contrast
+* All patterns now validate correctly in the block editor
+
+= 1.0.0-beta.1 - 2024-10-27 =
 * Initial release
 * 5 professionally designed patterns
 * 7 pattern categories

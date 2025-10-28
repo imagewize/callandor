@@ -35,8 +35,8 @@
     "wp-coding-standards/wpcs": "^3.0"
   },
   "scripts": {
-    "phpcs": "phpcs --standard=WordPress --extensions=php --ignore=vendor .",
-    "phpcbf": "phpcbf --standard=WordPress --extensions=php --ignore=vendor .",
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf",
     "phpstan": "phpstan analyse --memory-limit=2G"
   },
   "config": {

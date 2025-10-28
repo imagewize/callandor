@@ -31,8 +31,8 @@ return array(
 		<div class="wp-block-button has-custom-font-size has-base-font-size"><a class="wp-block-button__link has-base-color has-text-color has-background wp-element-button" style="border-radius:8px;background-color:#6366f1">' . __( 'Get Started', 'callandor' ) . '</a></div>
 		<!-- /wp:button -->
 
-		<!-- wp:button {"backgroundColor":"base","style":{"border":{"width":"2px","radius":"8px"},"color":{"text":"#6366f1"}},"borderColor":"border-dark","className":"is-style-outline","fontSize":"base"} -->
-		<div class="wp-block-button has-custom-font-size has-base-font-size is-style-outline"><a class="wp-block-button__link has-base-background-color has-background has-border-color has-border-dark-border-color wp-element-button" style="border-width:2px;border-radius:8px;color:#6366f1">' . __( 'Learn More', 'callandor' ) . '</a></div>
+		<!-- wp:button {"backgroundColor":"base","textColor":"primary","style":{"border":{"width":"2px","radius":"8px"},"color":{"text":"#6366f1"}},"borderColor":"border-dark","className":"is-style-outline","fontSize":"base"} -->
+		<div class="wp-block-button has-custom-font-size has-base-font-size is-style-outline"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background has-border-color has-border-dark-border-color wp-element-button" style="border-width:2px;border-radius:8px;color:#6366f1">' . __( 'Learn More', 'callandor' ) . '</a></div>
 		<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

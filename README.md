@@ -24,29 +24,31 @@
 
 ## Available Patterns
 
-### Hero Sections (2 patterns)
+The plugin includes these professionally-designed patterns (all using WordPress native blocks with theme.json integration):
+
+**Hero Sections**
 - **Hero Section with Call to Action** - Classic hero with headline, description, and prominent CTA button on colored background
 - **Hero Two-Tone** - Modern hero with two-tone heading, dual CTA buttons, and image in responsive two-column layout
 
-### Features (1 pattern)
+**Features & Services**
 - **3-Column Feature Grid** - Showcase services with icon placeholders, headings, and descriptions in clean grid layout
 
-### Call-to-Action (1 pattern)
+**Call-to-Actions**
 - **Newsletter Signup CTA** - Email capture with heading, description, and email input form on accent background
 
-### Testimonials (1 pattern)
+**Social Proof**
 - **Client Testimonial Cards** - Professional testimonial display with quote, author name, and company in card format
 
-### Pricing Tables (1 pattern)
+**E-Commerce & Pricing**
 - **3-Column Pricing Table** - Service package comparison with features list, pricing, and CTA buttons
 
-### Team (1 pattern)
+**Team & About**
 - **Team Member Grid** - Professional team profiles with photos, names, roles, and bios in 3-column layout
 
-### Contact (1 pattern)
+**Contact & Info**
 - **Contact Information Section** - Office hours, contact details, and physical address in organized 3-column card layout
 
-**Total: 8 professionally designed, business-focused patterns**
+All patterns are fully responsive, use theme.json design tokens, and integrate seamlessly with WordPress's native block editor.
 
 ## Requirements
 

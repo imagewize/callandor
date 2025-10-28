@@ -3,7 +3,7 @@
  * Plugin Name:       Callandor
  * Plugin URI:        https://github.com/imagewize/callandor
  * Description:       Pattern library for Sage 11 hybrid themes with Tailwind CSS support
- * Version:           1.0.0-beta.6
+ * Version:           1.0.0-beta.7
  * Requires at least: 6.6
  * Requires PHP:      8.2
  * Author:            Imagewize
@@ -24,7 +24,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'CALLANDOR_VERSION', '1.0.0-beta.6' );
+define( 'CALLANDOR_VERSION', '1.0.0-beta.7' );
 define( 'CALLANDOR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CALLANDOR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'CALLANDOR_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );

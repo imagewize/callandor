@@ -20,6 +20,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.11] - 2025-10-28
+
+### Changed
+- **Hero with CTA pattern redesign** for modern SaaS aesthetic
+  - Updated background from brand blue to clean white for better versatility
+  - Shortened heading to "Launch your idea with confidence" (more impactful, startup-focused)
+  - Changed heading color from white to black (`main`) for better contrast on white background
+  - Redesigned subheading to be more descriptive and business-focused
+  - Updated subheading color to gray (`main-accent`) for proper typography hierarchy
+  - Reduced button border radius from default (very rounded) to `8px` for modern, subtle corners
+  - Changed first button color from black to indigo (`#6366f1` - Tailwind indigo-500) for modern SaaS feel
+  - Updated second button to use indigo text color to match first button theme
+  - Maintained outline style on second button with proper border styling
+  - All typography uses Open Sans font family for clean, professional appearance
+  - Pattern now follows modern startup/SaaS design trends while maintaining theme consistency
+
+### Technical Details
+- First button: Indigo background (`#6366f1`), white text, `8px` border radius
+- Second button: White background, indigo text (`#6366f1`), `2px` border, `8px` border radius, outline style
+- Background: White (`base`) instead of brand blue for better content versatility
+- Heading: Black (`main` color) at `5xl` size for bold impact
+- Subheading: Gray (`main-accent` color) at `lg` size for readability hierarchy
+- Responsive layout maintained: stacks on mobile, centers on all screen sizes
+
 ## [1.0.0-beta.10] - 2025-10-28
 
 ### Fixed

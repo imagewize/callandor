@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.10
+Stable tag: 1.0.0-beta.11
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,19 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 1.0.0-beta.11 - 2025-10-28 =
+* Redesigned Hero with CTA pattern for modern SaaS aesthetic
+* Changed background from brand blue to clean white for better versatility
+* Updated heading to "Launch your idea with confidence" - shorter, more impactful, startup-focused
+* Heading now uses black color (main) instead of white for better contrast on white background
+* Redesigned subheading to be more descriptive and business-focused with gray color (main-accent)
+* Reduced button border radius from default (very rounded) to 8px for modern, subtle corners
+* First button now uses indigo color (#6366f1 - Tailwind indigo-500) instead of black for modern SaaS feel
+* Second button uses indigo text color to match first button theme while maintaining outline style
+* All typography uses Open Sans font family for clean, professional appearance
+* Pattern now follows modern startup/SaaS design trends while maintaining theme consistency
+* Maintained responsive layout: buttons stack on mobile, center on all screen sizes
 
 = 1.0.0-beta.10 - 2025-10-28 =
 * CRITICAL: Fixed double horizontal padding issue introduced in beta.9

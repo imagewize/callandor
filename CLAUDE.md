@@ -54,14 +54,14 @@ This is a WordPress plugin - test in actual WordPress environment:
 
 ### Core Classes
 
-**`Callandor_Pattern_Loader` (includes/class-pattern-loader.php)**
+**`Callandor_Pattern_Loader` (includes/class-callandor-pattern-loader.php)**
 - Scans `patterns/` directory recursively
 - Loads PHP files that return pattern arrays
 - Registers patterns using `register_block_pattern()`
 - Registers 7 custom categories (hero, cta, features, testimonials, pricing, team, contact)
 - Auto-prefixes categories with `callandor-`
 
-**`Callandor_Admin_Settings` (includes/class-admin-settings.php)**
+**`Callandor_Admin_Settings` (includes/class-callandor-admin-settings.php)**
 - Creates admin page under Appearance menu
 - Displays pattern library browser grouped by category
 - Manages settings (license key placeholder for Phase 2)
@@ -113,7 +113,10 @@ return array(
 ## File Naming Conventions
 
 **WordPress Coding Standards:**
-- Classes: `class-pattern-loader.php` (lowercase with hyphens)
+- Classes: `class-callandor-pattern-loader.php` (lowercase with hyphens, with plugin prefix)
+  - Format: `class-{plugin-prefix}-{class-name}.php`
+  - Class `Callandor_Pattern_Loader` → `class-callandor-pattern-loader.php`
+  - Class `Callandor_Admin_Settings` → `class-callandor-admin-settings.php`
 - Class names: `Callandor_Pattern_Loader` (underscores)
 - Functions: `callandor_init()` (prefix with `callandor_`)
 - Hooks: `callandor_{hook_name}` (always prefixed)
@@ -143,7 +146,8 @@ composer phpcbf
 **Configuration:**
 - Custom rules defined in `phpcs.xml`
 - Excludes: vendor/, node_modules/, assets/, languages/, docs/, wordpress-stubs.php
-- Modified WordPress standard to allow shorter class file names (without full class prefix)
+- Full WordPress.org compliance - no exceptions or modifications to standard rules
+- Class file names follow WordPress.org plugin repository requirements
 
 **Before Committing:**
 1. Run `composer phpcs` to check for errors

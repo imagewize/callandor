@@ -27,12 +27,12 @@ return array(
 
 		<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
-		<!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#6366f1"}},"textColor":"base","fontSize":"base"} -->
-		<div class="wp-block-button has-custom-font-size has-base-font-size"><a class="wp-block-button__link has-base-color has-text-color has-background wp-element-button" style="border-radius:8px;background-color:#6366f1">' . __( 'Get Started', 'callandor' ) . '</a></div>
+		<!-- wp:button {"backgroundColor":"primary","textColor":"base","style":{"border":{"radius":"8px"}},"fontSize":"base"} -->
+		<div class="wp-block-button has-custom-font-size has-base-font-size"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" style="border-radius:8px">' . __( 'Get Started', 'callandor' ) . '</a></div>
 		<!-- /wp:button -->
 
-		<!-- wp:button {"backgroundColor":"base","textColor":"primary","style":{"border":{"width":"2px","radius":"8px"},"color":{"text":"#6366f1"}},"borderColor":"border-dark","className":"is-style-outline","fontSize":"base"} -->
-		<div class="wp-block-button has-custom-font-size has-base-font-size is-style-outline"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background has-border-color has-border-dark-border-color wp-element-button" style="border-width:2px;border-radius:8px;color:#6366f1">' . __( 'Learn More', 'callandor' ) . '</a></div>
+		<!-- wp:button {"backgroundColor":"base","textColor":"primary","className":"is-style-outline","style":{"border":{"radius":"8px","width":"2px"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"fontSize":"base","borderColor":"primary"} -->
+		<div class="wp-block-button has-custom-font-size has-base-font-size is-style-outline"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background has-link-color has-border-color has-primary-border-color wp-element-button" style="border-width:2px;border-radius:8px">' . __( 'Learn More', 'callandor' ) . '</a></div>
 		<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

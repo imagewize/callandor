@@ -119,6 +119,38 @@ return array(
 - Hooks: `callandor_{hook_name}` (always prefixed)
 - Text domain: `callandor` (for translations)
 
+## WordPress Coding Standards (PHPCS)
+
+All code must follow WordPress Coding Standards. Use the following commands:
+
+```bash
+# Check coding standards
+composer phpcs
+
+# Auto-fix coding standards issues
+composer phpcbf
+```
+
+**Key PHPCS Rules:**
+- Inline comments must end with periods (`.`)
+- Use proper spacing around operators and assignments
+- Add DocBlocks for all functions with `@param` and `@return` tags
+- Escape outputs: `esc_html()`, `esc_attr()`, `wp_kses_post()`
+- Sanitize inputs: `sanitize_text_field()`, `sanitize_textarea_field()`
+- Use `phpcs:ignore` comments only when absolutely necessary (e.g., `$_GET` without nonce for WordPress-handled forms)
+- Always add spaces before inline comments and end with proper punctuation
+
+**Configuration:**
+- Custom rules defined in `phpcs.xml`
+- Excludes: vendor/, node_modules/, assets/, languages/, docs/, wordpress-stubs.php
+- Modified WordPress standard to allow shorter class file names (without full class prefix)
+
+**Before Committing:**
+1. Run `composer phpcs` to check for errors
+2. Run `composer phpcbf` to auto-fix what can be fixed
+3. Manually fix any remaining errors
+4. Verify with `composer phpcs` again
+
 ## Adding New Patterns
 
 1. Create PHP file in appropriate `patterns/{category}/` subdirectory

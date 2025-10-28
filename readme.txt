@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.9
+Stable tag: 1.0.0-beta.10
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,16 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 1.0.0-beta.10 - 2025-10-28 =
+* CRITICAL: Fixed double horizontal padding issue introduced in beta.9
+* Beta.9 added explicit horizontal padding that conflicted with WordPress's automatic has-global-padding class
+* WordPress applies theme.json global padding automatically when useRootPaddingAwareAlignments is enabled
+* Removed explicit horizontal padding from inner constrained groups in all 8 patterns
+* WordPress now automatically applies correct padding via has-global-padding class
+* Patterns now properly leverage WordPress's built-in root padding awareness system
+* Cleaner, more maintainable approach following WordPress best practices
+* All patterns pass WordPress Coding Standards (PHPCS) validation
 
 = 1.0.0-beta.9 - 2025-10-28 =
 * CRITICAL: Fixed full-width block padding issue affecting all pattern sections

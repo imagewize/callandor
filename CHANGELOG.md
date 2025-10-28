@@ -20,6 +20,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.10] - 2025-10-28
+
+### Fixed
+- **CRITICAL**: Fixed double horizontal padding issue introduced in beta.9
+  - Beta.9 added explicit horizontal padding to inner constrained groups
+  - This conflicted with WordPress's automatic `has-global-padding` class
+  - WordPress applies theme.json global padding automatically when `useRootPaddingAwareAlignments: true`
+  - Result: Content had double the intended horizontal padding (2x `var:preset|spacing|50`)
+  - **Solution**: Removed explicit horizontal padding from inner constrained groups
+  - WordPress now automatically applies correct padding via `has-global-padding` class
+  - Patterns now properly leverage WordPress's built-in root padding awareness system
+
+### Changed
+- **All patterns updated to remove duplicate horizontal padding:**
+  - contact/contact-info.php
+  - cta/cta-newsletter.php
+  - features/feature-grid.php
+  - hero/hero-with-cta.php
+  - hero/hero-two-tone.php
+  - pricing/pricing-table.php
+  - team/team-grid.php
+  - testimonials/testimonial-card.php
+
+### Technical Details
+- Outer group: `align="full"` with vertical padding only (top/bottom)
+- Inner group: `layout:{"type":"constrained"}` with **NO explicit horizontal padding**
+- WordPress automatically adds `has-global-padding` class to constrained layouts inside full-width blocks
+- Theme.json global styles (lines 6-10) define horizontal padding: `var(--wp--preset--spacing--50)`
+- This approach follows WordPress core's `useRootPaddingAwareAlignments` standard
+- All 8 patterns pass WordPress Coding Standards (PHPCS) validation
+
+### Why Beta.9 Didn't Work
+- Beta.9 approach: Explicit `padding-left` and `padding-right` on inner group
+- Conflicted with automatic padding from `has-global-padding` class
+- Created double padding (theme padding + pattern padding)
+- Beta.10 removes explicit padding, relies on WordPress automatic system
+- Cleaner, more maintainable, follows WordPress best practices
+
 ## [1.0.0-beta.9] - 2025-10-28
 
 ### Fixed

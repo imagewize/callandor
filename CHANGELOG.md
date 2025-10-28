@@ -20,6 +20,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.7] - 2025-10-28
+
+### Added
+- New Hero Two-Tone pattern with modern design elements
+  - Two-tone heading with contrasting colors (black + primary blue accent)
+  - Dual CTA buttons with distinct styling (primary blue and light gray backgrounds)
+  - Two-column responsive layout (text left, image right, stacks on mobile)
+  - Professional typography with proper line-height and spacing
+  - Rounded corners on buttons (8px) and images (12px)
+  - Uses Open Sans font family for clean, professional appearance
+  - Proper spacing using theme spacing scale (40, 50, 60)
+  - Color contrast optimized for accessibility
+  - Placeholder image from Unsplash for easy replacement
+
+### Technical
+- Pattern file: `patterns/hero/hero-two-tone.php`
+- Total pattern count increased from 7 to 8 patterns
+- Maintains full WordPress Coding Standards compliance
+- Uses theme.json color tokens (primary, base, tertiary, main-accent)
+
 ## [1.0.0-beta.6] - 2025-10-27
 
 ### Added

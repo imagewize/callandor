@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.6
+Stable tag: 1.0.0-beta.7
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -119,6 +119,14 @@ Yes! This is an open-source project. Visit our GitHub repository to contribute p
 6. Pricing table comparison pattern
 
 == Changelog ==
+
+= 1.0.0-beta.7 - 2025-10-28 =
+* Added Hero Two-Tone pattern with modern design elements
+* Two-tone heading with contrasting colors (black + primary blue accent)
+* Dual CTA buttons with distinct styling (primary blue and light gray backgrounds)
+* Two-column responsive layout (text left, image right, stacks on mobile)
+* Total pattern count increased from 7 to 8 patterns
+* Professional typography with proper spacing and accessibility
 
 = 1.0.0-beta.6 - 2025-10-27 =
 * Added Contact Information Section pattern with professional 3-column card layout

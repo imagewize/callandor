@@ -13,14 +13,16 @@ return array(
 	'categories'    => array( 'testimonials' ),
 	'keywords'      => array( 'testimonial', 'review', 'client', 'quote', 'social-proof' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-	<!-- wp:heading {"textAlign":"center","fontSize":"5xl"} -->
-	<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size">' . __( 'What Our Clients Say', 'callandor' ) . '</h2>
-	<!-- /wp:heading -->
+	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)">
+		<!-- wp:heading {"textAlign":"center","fontSize":"5xl"} -->
+		<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size">' . __( 'What Our Clients Say', 'callandor' ) . '</h2>
+		<!-- /wp:heading -->
 
-	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"},"margin":{"top":"var:preset|spacing|50"}}}} -->
-	<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--50)">
+		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"},"margin":{"top":"var:preset|spacing|50"}}}} -->
+		<div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}},"border":{"width":"1px","color":"#ebeced"}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-border-color has-base-background-color has-background" style="border-color:#ebeced;border-width:1px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:paragraph {"fontSize":"2xl"} -->
@@ -60,8 +62,10 @@ return array(
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
 	</div>
-	<!-- /wp:columns -->
+	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->',
 );

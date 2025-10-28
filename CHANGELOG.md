@@ -20,6 +20,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.9] - 2025-10-28
+
+### Fixed
+- **CRITICAL**: Fixed full-width block padding issue affecting all pattern sections
+  - Pattern sections with `align="full"` were touching viewport edges on full-width layouts
+  - Root cause: Combining `align="full"` with `layout:{"type":"constrained"}` caused conflicting layout behavior
+  - Changed structure to use nested groups: outer full-width with vertical padding, inner constrained with horizontal padding
+  - This matches the Nynaeve theme's architecture and follows WordPress modern theme approach
+  - All patterns now properly respect `var:preset|spacing|50` horizontal padding (2rem → 3rem responsive)
+  - Content properly centers within 55rem max-width from theme.json
+  - Resolved layout conflicts following WordPress `useRootPaddingAwareAlignments` standard
+
+### Changed
+- **All patterns restructured for proper full-width handling:**
+  - contact/contact-info.php
+  - cta/cta-newsletter.php
+  - features/feature-grid.php
+  - hero/hero-with-cta.php
+  - hero/hero-two-tone.php
+  - pricing/pricing-table.php
+  - team/team-grid.php
+  - testimonials/testimonial-card.php
+
+### Technical Details
+- Outer group: `align="full"` with `layout:{"type":"default"}`, vertical padding only (top/bottom)
+- Inner group: `layout:{"type":"constrained"}`, horizontal padding only (left/right)
+- Pattern content now properly indented under inner group
+- All 8 patterns pass WordPress Coding Standards (PHPCS) validation
+- Follows Nynaeve theme's hybrid layout approach used by CTA Columns, Multi-Column Content, Review Profiles
+
 ## [1.0.0-beta.8] - 2025-10-28
 
 ### Fixed

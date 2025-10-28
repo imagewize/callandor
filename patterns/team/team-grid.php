@@ -13,18 +13,20 @@ return array(
 	'categories'    => array( 'team' ),
 	'keywords'      => array( 'team', 'staff', 'people', 'about', 'employees', 'members', 'profiles' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-tertiary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-	<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}},"fontSize":"5xl"} -->
-	<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--20)">' . __( 'Meet Our Team', 'callandor' ) . '</h2>
-	<!-- /wp:heading -->
+	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"tertiary","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull has-tertiary-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)">
+		<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}},"fontSize":"5xl"} -->
+		<h2 class="wp-block-heading has-text-align-center has-5-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--20)">' . __( 'Meet Our Team', 'callandor' ) . '</h2>
+		<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"textColor":"main-accent","fontSize":"xl"} -->
-	<p class="has-text-align-center has-main-accent-color has-text-color has-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'Dedicated professionals committed to delivering exceptional results for your business', 'callandor' ) . '</p>
-	<!-- /wp:paragraph -->
+		<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"textColor":"main-accent","fontSize":"xl"} -->
+		<p class="has-text-align-center has-main-accent-color has-text-color has-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'Dedicated professionals committed to delivering exceptional results for your business', 'callandor' ) . '</p>
+		<!-- /wp:paragraph -->
 
-	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-	<div class="wp-block-columns">
+		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+		<div class="wp-block-columns">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 			<!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"8px"}}} -->
@@ -96,8 +98,10 @@ return array(
 			<!-- /wp:group -->
 		</div>
 		<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
 	</div>
-	<!-- /wp:columns -->
+	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->',
 );

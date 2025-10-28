@@ -31,6 +31,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **Solution**: Removed explicit horizontal padding from inner constrained groups
   - WordPress now automatically applies correct padding via `has-global-padding` class
   - Patterns now properly leverage WordPress's built-in root padding awareness system
+- **CRITICAL**: Fixed column width inconsistency across all patterns
+  - Columns blocks were receiving extra horizontal padding from theme CSS rule at app.css:691-694
+  - Theme rule `:where(.is-layout-constrained) > :not(.alignfull):not(.alignwide)` was adding padding to columns
+  - This made pattern columns appear narrower than custom blocks like CTA Columns
+  - **Solution**: Added `"align":"wide"` attribute to all columns blocks in all patterns
+  - Columns now use theme's `wideSize: 64rem` and are excluded from the extra padding rule
+  - All patterns now have consistent, proper column widths matching theme standards
+- **Fixed**: Hero Two-Tone heading color visibility issue
+  - Heading text defaulted to white color from theme's h1 CSS rule (app.css:96-102)
+  - "Hero" and "2.0" text were invisible against white background
+  - **Solution**: Added explicit `textColor:"main"` attribute to heading block
+  - Now displays proper two-tone effect: "Hero" (black) + "Section" (primary blue) + "2.0" (black)
 
 ### Changed
 - **All patterns updated to remove duplicate horizontal padding:**
@@ -42,12 +54,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - pricing/pricing-table.php
   - team/team-grid.php
   - testimonials/testimonial-card.php
+- **All patterns with columns updated to use wide alignment:**
+  - contact/contact-info.php - columns now `align="wide"`
+  - cta/cta-newsletter.php - columns now `align="wide"`
+  - features/feature-grid.php - columns now `align="wide"`
+  - hero/hero-two-tone.php - columns now `align="wide"`
+  - pricing/pricing-table.php - columns now `align="wide"`
+  - team/team-grid.php - columns now `align="wide"`
+  - testimonials/testimonial-card.php - columns now `align="wide"`
 
 ### Technical Details
 - Outer group: `align="full"` with vertical padding only (top/bottom)
 - Inner group: `layout:{"type":"constrained"}` with **NO explicit horizontal padding**
+- Columns blocks: `align="wide"` to prevent extra padding from theme CSS rules
 - WordPress automatically adds `has-global-padding` class to constrained layouts inside full-width blocks
 - Theme.json global styles (lines 6-10) define horizontal padding: `var(--wp--preset--spacing--50)`
+- Columns use theme's `wideSize: 64rem` for consistent width across all patterns
 - This approach follows WordPress core's `useRootPaddingAwareAlignments` standard
 - All 8 patterns pass WordPress Coding Standards (PHPCS) validation
 
@@ -56,6 +78,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Conflicted with automatic padding from `has-global-padding` class
 - Created double padding (theme padding + pattern padding)
 - Beta.10 removes explicit padding, relies on WordPress automatic system
+- Columns without `align="wide"` received extra padding from theme's constrained layout rules
+- Beta.10 adds wide alignment to columns for consistent width behavior
 - Cleaner, more maintainable, follows WordPress best practices
 
 ## [1.0.0-beta.9] - 2025-10-28

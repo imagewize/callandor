@@ -25,8 +25,8 @@ return array(
 		<p class="has-text-align-center has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'We deliver results that matter to your bottom line', 'callandor' ) . '</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-		<div class="wp-block-columns">
+		<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+		<div class="wp-block-columns alignwide">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"backgroundColor":"base"} -->
 		<div class="wp-block-column has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"level":3,"textColor":"primary","fontSize":"3xl"} -->

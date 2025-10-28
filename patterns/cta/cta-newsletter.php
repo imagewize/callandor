@@ -17,8 +17,8 @@ return array(
 <div class="wp-block-group alignfull has-primary-accent-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group">
-		<!-- wp:columns {"verticalAlignment":"center"} -->
-		<div class="wp-block-columns are-vertically-aligned-center">
+		<!-- wp:columns {"align":"wide","verticalAlignment":"center"} -->
+		<div class="wp-block-columns alignwide are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
 			<!-- wp:heading {"level":2,"fontSize":"4xl"} -->

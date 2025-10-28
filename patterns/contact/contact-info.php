@@ -25,8 +25,8 @@ return array(
 		<p class="has-text-align-center has-main-accent-color has-text-color has-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'We\'re here to help. Reach out and let\'s discuss how we can support your business goals.', 'callandor' ) . '</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-		<div class="wp-block-columns">
+		<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+		<div class="wp-block-columns alignwide">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|40","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40"}},"border":{"width":"1px","radius":"8px"}},"borderColor":"border-light","backgroundColor":"tertiary"} -->
 		<div class="wp-block-column has-border-color has-border-light-border-color has-tertiary-background-color has-background" style="border-width:1px;border-radius:8px;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|20"}}},"textColor":"primary","fontSize":"3xl"} -->

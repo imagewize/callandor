@@ -25,8 +25,8 @@ return array(
 		<p class="has-text-align-center has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50)">' . __( 'Flexible packages designed to scale with your business', 'callandor' ) . '</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-		<div class="wp-block-columns">
+		<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+		<div class="wp-block-columns alignwide">
 		<!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}},"border":{"width":"1px"}},"borderColor":"border-light","backgroundColor":"base"} -->
 		<div class="wp-block-column has-border-color has-border-light-border-color has-base-background-color has-background" style="border-width:1px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
 			<!-- wp:heading {"textAlign":"center","level":3,"fontSize":"3xl"} -->

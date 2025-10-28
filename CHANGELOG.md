@@ -28,11 +28,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Changed all image blocks to use simple string format: `"border":{"radius":"8px"}`
   - Updated inline styles from individual corner properties to unified `border-radius:8px`
   - Pattern now loads correctly in WordPress block editor without validation errors
+- **CRITICAL**: Fixed "Block contains unexpected or invalid content" errors in Contact Information pattern
+  - Column blocks were using nested `border.color` instead of `borderColor` attribute
+  - Changed to proper format: `"borderColor":"border-light"` with required CSS classes
+  - Added `has-border-color` and `has-border-light-border-color` classes to column HTML
+  - Pattern now validates correctly in WordPress block editor
+
+### Added
+- **Bundled placeholder images** for offline development and production use
+  - Created `assets/images/patterns/` directory structure
+  - Downloaded and bundled 4 professional Unsplash images (~423KB total):
+    - `hero-background.jpg` (297KB) - Professional landscape for hero sections
+    - `team-member-1.jpg` (40KB) - Professional headshot
+    - `team-member-2.jpg` (47KB) - Professional headshot
+    - `team-member-3.jpg` (39KB) - Professional headshot
+  - All patterns now use `CALLANDOR_PLUGIN_URL` constant to reference bundled images
+  - No external dependencies - works offline on localhost
+  - Proper Unsplash License attribution for all images
+- **Image credits** added to readme.txt and README.md
+  - Hero background: Casey Horner
+  - Team member 1: LinkedIn Sales Solutions
+  - Team member 2: Christina @ wocintechchat.com
+  - Team member 3: Megan Watson
+
+### Changed
+- Team Grid pattern: Updated to use bundled images instead of via.placeholder.com
+- Hero Two-Tone pattern: Updated to use bundled images instead of external Unsplash URLs
 
 ### Documentation
 - Added critical guidelines to CLAUDE.md for image block border-radius formatting
+- Added critical guidelines to CLAUDE.md for column block border color formatting
+- Added comprehensive pattern image guidelines to CLAUDE.md:
+  - Always use bundled images in `assets/images/patterns/`
+  - Reference with `CALLANDOR_PLUGIN_URL` constant
+  - Never use external URLs in production patterns
+  - Image naming conventions and size recommendations
+  - Credit and licensing requirements
 - Documented proper JSON structure to prevent future block validation issues
-- Specified that simple string format must be used instead of object format for border-radius
 
 ## [1.0.0-beta.7] - 2025-10-28
 

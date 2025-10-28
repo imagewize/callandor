@@ -261,6 +261,17 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Built for**: [Sage 11](https://roots.io/sage/) by Roots.io
 - **Inspired by**: Modern block pattern libraries like Spectra
 
+### Image Credits
+
+Pattern placeholder images are sourced from [Unsplash](https://unsplash.com) under the Unsplash License:
+
+- **Hero background**: Photo by [Casey Horner](https://unsplash.com/@mischievous_penguins)
+- **Team member 1**: Photo by [LinkedIn Sales Solutions](https://unsplash.com/@linkedinsalesnavigator)
+- **Team member 2**: Photo by [Christina @ wocintechchat.com](https://unsplash.com/@wocintechchat)
+- **Team member 3**: Photo by [Megan Watson](https://unsplash.com/@megwatsonphoto)
+
+All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.

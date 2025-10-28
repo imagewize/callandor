@@ -94,6 +94,22 @@ return array(
 - Correct inline style: `style="border-radius:8px"` (NOT individual `border-top-left-radius`, etc.)
 - This applies to ALL image blocks in patterns to ensure WordPress Gutenberg compatibility
 
+**CRITICAL - Column Block Border Color:**
+- When using border colors on column blocks, use the `borderColor` attribute (NOT nested `border.color`)
+- Correct format: `"borderColor":"border-light","style":{"border":{"width":"1px","radius":"8px"}}`
+- Wrong format: `"style":{"border":{"width":"1px","color":"#ebeced","radius":"8px"}}`
+- HTML must include: `has-border-color has-border-light-border-color` classes
+- This applies to ALL column blocks with borders to ensure WordPress Gutenberg compatibility
+
+**Pattern Images:**
+- **ALWAYS use bundled images**: Store in `assets/images/patterns/` directory
+- **Reference with constant**: Use `CALLANDOR_PLUGIN_URL . 'assets/images/patterns/filename.jpg'`
+- **Never use external URLs**: Avoid Unsplash, placeholder.com, or any external image services in production patterns
+- **Image naming**: Use descriptive lowercase names with hyphens (e.g., `team-member-1.jpg`, `hero-background.jpg`)
+- **Image sizes**: Team members: 600x600px, Heroes: 1200x800px (optimize for web)
+- **Image credits**: Always credit Unsplash photographers in README.md and readme.txt
+- **Image licenses**: Ensure all bundled images are properly licensed (Unsplash License or similar)
+
 ### Theme Integration
 
 **Critical:** Patterns must use Nynaeve/Moiraine theme design tokens:

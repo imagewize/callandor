@@ -21,8 +21,8 @@ return array(
 		<div class="wp-block-columns are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-			<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"4.5rem","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}},"fontFamily":"open-sans"} -->
-			<h1 class="wp-block-heading has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--40);font-size:4.5rem;line-height:1.1">' . __( 'Hero ', 'callandor' ) . '<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-primary-color">' . __( 'Section', 'callandor' ) . '</mark> ' . __( '2.0', 'callandor' ) . '</h1>
+			<!-- wp:heading {"level":1,"textColor":"main","style":{"typography":{"fontSize":"4.5rem","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"fontFamily":"open-sans"} -->
+			<h1 class="wp-block-heading has-main-color has-text-color has-link-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--40);font-size:4.5rem;line-height:1.1">' . __( 'Hero ', 'callandor' ) . '<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-primary-color">' . __( 'Section', 'callandor' ) . '</mark> ' . __( '2.0', 'callandor' ) . '</h1>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}},"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}},"textColor":"main-accent","fontFamily":"open-sans"} -->

@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.11
+Stable tag: 1.0.0-beta.12
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -131,6 +131,15 @@ All images are used for demonstration purposes and can be easily replaced with y
 
 == Changelog ==
 
+= 1.0.0-beta.12 - 2025-10-28 =
+* Fixed Hero with CTA pattern button validation error
+* Added missing textColor attribute to second button to fix "Block contains unexpected or invalid content" error
+* Changed buttons to use theme's primary brand color (#017cb6) instead of custom indigo for better theme consistency
+* First button now uses primary background with white text (proper theme integration)
+* Second button uses primary text and border color with outline style
+* All button colors now properly reference theme.json palette tokens
+* Maintains modern design with 8px border radius on both buttons
+
 = 1.0.0-beta.11 - 2025-10-28 =
 * Redesigned Hero with CTA pattern for modern SaaS aesthetic
 * Changed background from brand blue to clean white for better versatility
@@ -138,8 +147,6 @@ All images are used for demonstration purposes and can be easily replaced with y
 * Heading now uses black color (main) instead of white for better contrast on white background
 * Redesigned subheading to be more descriptive and business-focused with gray color (main-accent)
 * Reduced button border radius from default (very rounded) to 8px for modern, subtle corners
-* First button now uses indigo color (#6366f1 - Tailwind indigo-500) instead of black for modern SaaS feel
-* Second button uses indigo text color to match first button theme while maintaining outline style
 * All typography uses Open Sans font family for clean, professional appearance
 * Pattern now follows modern startup/SaaS design trends while maintaining theme consistency
 * Maintained responsive layout: buttons stack on mobile, center on all screen sizes

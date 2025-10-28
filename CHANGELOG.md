@@ -20,6 +20,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.12] - 2025-10-28
+
+### Fixed
+- **Hero with CTA pattern button validation error**
+  - Fixed "Block contains unexpected or invalid content" error on second button
+  - Added missing `textColor` attribute to ensure proper class generation
+  - WordPress now correctly generates `has-text-color` class for validation
+
+### Changed
+- **Hero with CTA buttons now use theme brand color for consistency**
+  - Changed from custom indigo color to theme's `primary` brand color (#017cb6)
+  - First button: `primary` background with white text
+  - Second button: `primary` text and border color with white background
+  - Better integration with Nynaeve theme design system
+  - Maintains modern design with proper theme color tokens
+
+### Technical Details
+- First button: Uses `backgroundColor="primary"` instead of custom hex color
+- Second button: Uses `textColor="primary"` and `borderColor="primary"` with outline style
+- Both buttons maintain `8px` border radius for modern aesthetic
+- All colors now properly reference theme.json palette tokens
+- Fixed button validation by adding proper `textColor` attribute and `has-text-color` class
+
 ## [1.0.0-beta.11] - 2025-10-28
 
 ### Changed
@@ -30,18 +53,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Redesigned subheading to be more descriptive and business-focused
   - Updated subheading color to gray (`main-accent`) for proper typography hierarchy
   - Reduced button border radius from default (very rounded) to `8px` for modern, subtle corners
-  - Changed first button color from black to indigo (`#6366f1` - Tailwind indigo-500) for modern SaaS feel
-  - Updated second button to use indigo text color to match first button theme
-  - Maintained outline style on second button with proper border styling
   - All typography uses Open Sans font family for clean, professional appearance
   - Pattern now follows modern startup/SaaS design trends while maintaining theme consistency
 
 ### Technical Details
-- First button: Indigo background (`#6366f1`), white text, `8px` border radius
-- Second button: White background, indigo text (`#6366f1`), `2px` border, `8px` border radius, outline style
 - Background: White (`base`) instead of brand blue for better content versatility
 - Heading: Black (`main` color) at `5xl` size for bold impact
 - Subheading: Gray (`main-accent` color) at `lg` size for readability hierarchy
+- Buttons: `8px` border radius for modern, subtle rounded corners
 - Responsive layout maintained: stacks on mobile, centers on all screen sizes
 
 ## [1.0.0-beta.10] - 2025-10-28

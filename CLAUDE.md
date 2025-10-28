@@ -88,6 +88,28 @@ return array(
 - Uses theme.json font size slugs: `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, etc.
 - Uses spacing variables: `var:preset|spacing|40`, `var:preset|spacing|50`, etc.
 
+**CRITICAL - Image Block Border Radius:**
+- When using border-radius on image blocks, ALWAYS use simple string format: `"style":{"border":{"radius":"8px"}}`
+- NEVER use object format with individual corners: `"radius":{"top":"8px","left":"8px","right":"8px"}` (causes "Block contains unexpected or invalid content" errors)
+- Correct inline style: `style="border-radius:8px"` (NOT individual `border-top-left-radius`, etc.)
+- This applies to ALL image blocks in patterns to ensure WordPress Gutenberg compatibility
+
+**CRITICAL - Column Block Border Color:**
+- When using border colors on column blocks, use the `borderColor` attribute (NOT nested `border.color`)
+- Correct format: `"borderColor":"border-light","style":{"border":{"width":"1px","radius":"8px"}}`
+- Wrong format: `"style":{"border":{"width":"1px","color":"#ebeced","radius":"8px"}}`
+- HTML must include: `has-border-color has-border-light-border-color` classes
+- This applies to ALL column blocks with borders to ensure WordPress Gutenberg compatibility
+
+**Pattern Images:**
+- **ALWAYS use bundled images**: Store in `assets/images/patterns/` directory
+- **Reference with constant**: Use `CALLANDOR_PLUGIN_URL . 'assets/images/patterns/filename.jpg'`
+- **Never use external URLs**: Avoid Unsplash, placeholder.com, or any external image services in production patterns
+- **Image naming**: Use descriptive lowercase names with hyphens (e.g., `team-member-1.jpg`, `hero-background.jpg`)
+- **Image sizes**: Team members: 600x600px, Heroes: 1200x800px (optimize for web)
+- **Image credits**: Always credit Unsplash photographers in README.md and readme.txt
+- **Image licenses**: Ensure all bundled images are properly licensed (Unsplash License or similar)
+
 ### Theme Integration
 
 **Critical:** Patterns must use Nynaeve/Moiraine theme design tokens:
@@ -121,6 +143,27 @@ return array(
 - Functions: `callandor_init()` (prefix with `callandor_`)
 - Hooks: `callandor_{hook_name}` (always prefixed)
 - Text domain: `callandor` (for translations)
+
+## Version Management
+
+When releasing a new version, update the version number in these files ONLY:
+
+**Required Updates:**
+1. `callandor.php` - Plugin header: `* Version: 1.0.0-beta.X`
+2. `callandor.php` - Constant: `define( 'CALLANDOR_VERSION', '1.0.0-beta.X' );`
+3. `readme.txt` - Stable tag: `Stable tag: 1.0.0-beta.X`
+4. `readme.txt` - Changelog section (add new entry at top)
+5. `CHANGELOG.md` - Add new version entry at top
+
+**DO NOT Update:**
+- `composer.json` - Does NOT contain version field (managed by git tags)
+
+**Release Process:**
+1. Update version numbers in the 5 locations above
+2. Run `composer phpcs` to verify coding standards
+3. Commit changes with message like "Release version 1.0.0-beta.X"
+4. Create git tag: `git tag -a v1.0.0-beta.X -m "Release version 1.0.0-beta.X"`
+5. Push with tags: `git push origin main --tags`
 
 ## WordPress Coding Standards (PHPCS)
 

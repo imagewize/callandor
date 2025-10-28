@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.7
+Stable tag: 1.0.0-beta.8
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -118,7 +118,30 @@ Yes! This is an open-source project. Visit our GitHub repository to contribute p
 5. Testimonial cards with client reviews
 6. Pricing table comparison pattern
 
+== Image Credits ==
+
+Pattern placeholder images are sourced from Unsplash (https://unsplash.com) under the Unsplash License.
+
+* Hero background: Photo by Casey Horner (https://unsplash.com/@mischievous_penguins)
+* Team member 1: Photo by LinkedIn Sales Solutions (https://unsplash.com/@linkedinsalesnavigator)
+* Team member 2: Photo by Christina @ wocintechchat.com (https://unsplash.com/@wocintechchat)
+* Team member 3: Photo by Megan Watson (https://unsplash.com/@megwatsonphoto)
+
+All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
+
 == Changelog ==
+
+= 1.0.0-beta.8 - 2025-10-28 =
+* CRITICAL: Fixed "Block contains unexpected or invalid content" errors in Team Grid pattern
+* CRITICAL: Fixed "Block contains unexpected or invalid content" errors in Contact Information pattern
+* Image blocks now use proper border-radius format (simple string instead of object)
+* Column blocks now use proper borderColor attribute with required CSS classes
+* Bundled 4 professional Unsplash placeholder images (~423KB) for offline development
+* All patterns now reference bundled images using plugin URL constant
+* No external dependencies - works offline on localhost
+* Added proper Unsplash License image credits for all photographers
+* Comprehensive pattern image guidelines added to CLAUDE.md
+* Patterns now load correctly in WordPress block editor without validation errors
 
 = 1.0.0-beta.7 - 2025-10-28 =
 * Added Hero Two-Tone pattern with modern design elements

@@ -20,6 +20,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Additional pattern categories
 - Pattern preview in admin interface
 
+## [1.0.0-beta.6] - 2025-10-27
+
+### Added
+- New Contact Information Section pattern with professional 3-column card layout
+  - Office hours, contact details (phone/email), and physical address
+  - Modern card design with subtle borders and border-radius (8px)
+  - CTA button for scheduling consultations
+  - Professional typography hierarchy (5xl heading, xl subheading, lg body text)
+  - Proper spacing using Nynaeve theme spacing scale (20, 40, 50, 60)
+  - Uses theme color system (primary, main, main-accent, tertiary, base)
+- New Team Member Grid pattern with professional team profiles
+  - 3-column layout with placeholder images
+  - Name (2xl), role (base), and bio for each team member
+  - Clean white cards on tertiary background
+  - Rounded image corners (8px) for modern aesthetic
+  - Consistent spacing and margin control throughout
+  - Professional, ROI-focused business copy
+
+### Technical
+- Contact and Team pattern categories now populated (previously empty directories)
+- Both new patterns use consistent `var:preset|spacing` tokens
+- Total pattern count increased from 5 to 7 patterns
+
 ## [1.0.0-beta.5] - 2025-10-27
 
 ### Fixed

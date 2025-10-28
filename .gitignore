@@ -62,3 +62,7 @@ wordpress-stubs.php
 *.zip
 *.tar.gz
 *.rar
+
+
+# Git Pull Request 
+create-pr.sh

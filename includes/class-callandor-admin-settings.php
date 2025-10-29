@@ -38,6 +38,7 @@ class Callandor_Admin_Settings {
 	public function init() {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		add_action( 'admin_init', array( $this, 'handle_clear_cache' ) );
 
 		// Initialize pattern loader for pattern listing.
 		$this->pattern_loader = new Callandor_Pattern_Loader();
@@ -140,6 +141,41 @@ class Callandor_Admin_Settings {
 	}
 
 	/**
+	 * Handle clear cache action.
+	 */
+	public function handle_clear_cache() {
+		// Check if clear cache button was clicked.
+		if ( ! isset( $_POST['callandor_clear_cache'] ) ) {
+			return;
+		}
+
+		// Verify nonce.
+		if ( ! isset( $_POST['callandor_clear_cache_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['callandor_clear_cache_nonce'] ) ), 'callandor_clear_cache_action' ) ) {
+			return;
+		}
+
+		// Check user capabilities.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		// Clear the cache.
+		$this->pattern_loader->clear_cache();
+
+		// Redirect with success message.
+		wp_safe_redirect(
+			add_query_arg(
+				array(
+					'page'          => $this->page_slug,
+					'cache-cleared' => '1',
+				),
+				admin_url( 'themes.php' )
+			)
+		);
+		exit;
+	}
+
+	/**
 	 * Render the admin page.
 	 */
 	public function render_admin_page() {
@@ -153,6 +189,16 @@ class Callandor_Admin_Settings {
 				'callandor_messages',
 				'callandor_message',
 				__( 'Settings saved successfully.', 'callandor' ),
+				'success'
+			);
+		}
+
+		// Handle cache cleared message.
+		if ( isset( $_GET['cache-cleared'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			add_settings_error(
+				'callandor_messages',
+				'callandor_cache_cleared',
+				__( 'Pattern cache cleared successfully. Patterns will be reloaded on next page load.', 'callandor' ),
 				'success'
 			);
 		}
@@ -175,9 +221,32 @@ class Callandor_Admin_Settings {
 					</form>
 				</div>
 
+				<!-- Cache Management -->
+				<div class="callandor-cache-section">
+					<h2><?php esc_html_e( 'Cache Management', 'callandor' ); ?></h2>
+					<p class="description">
+						<?php esc_html_e( 'Clear the pattern cache to force reload all patterns from files. Useful when developing or modifying patterns.', 'callandor' ); ?>
+					</p>
+					<form method="post" action="" id="callandor-clear-cache-form">
+						<?php wp_nonce_field( 'callandor_clear_cache_action', 'callandor_clear_cache_nonce' ); ?>
+						<button type="submit" name="callandor_clear_cache" class="button button-secondary" id="callandor-clear-cache-btn" style="margin-top: 10px;">
+							<span class="callandor-btn-text"><?php esc_html_e( 'Clear Pattern Cache', 'callandor' ); ?></span>
+							<span class="callandor-btn-loading" style="display: none;">
+								<span class="spinner is-active" style="float: none; margin: 0 5px 0 0;"></span>
+								<?php esc_html_e( 'Clearing Cache...', 'callandor' ); ?>
+							</span>
+						</button>
+					</form>
+				</div>
+
 				<!-- Pattern Library Browser -->
 				<div class="callandor-patterns-section">
-					<h2><?php esc_html_e( 'Available Patterns', 'callandor' ); ?></h2>
+					<h2><?php esc_html_e( 'Pattern Library', 'callandor' ); ?></h2>
+					<p class="description">
+						<?php
+						esc_html_e( 'Browse available block patterns below. To preview and insert patterns into your pages, use the WordPress Site Editor pattern browser where patterns render with your actual theme styling.', 'callandor' );
+						?>
+					</p>
 					<?php $this->render_pattern_library(); ?>
 				</div>
 
@@ -255,6 +324,11 @@ class Callandor_Admin_Settings {
 									<h4><?php echo esc_html( $pattern['title'] ); ?></h4>
 									<span class="callandor-pattern-slug"><?php echo esc_html( $pattern['slug'] ); ?></span>
 								</div>
+
+								<?php if ( ! empty( $pattern['description'] ) ) : ?>
+									<p class="callandor-pattern-description"><?php echo esc_html( $pattern['description'] ); ?></p>
+								<?php endif; ?>
+
 								<div class="callandor-pattern-meta">
 									<span class="callandor-pattern-category-badge">
 										<?php echo esc_html( $category_label ); ?>
@@ -262,6 +336,13 @@ class Callandor_Admin_Settings {
 									<span class="callandor-pattern-status">
 										<?php echo $is_disabled ? esc_html__( 'Disabled', 'callandor' ) : esc_html__( 'Active', 'callandor' ); ?>
 									</span>
+								</div>
+
+								<div class="callandor-pattern-actions">
+									<a href="<?php echo esc_url( admin_url( 'site-editor.php?p=%2Fpattern' ) ); ?>" class="button button-small" target="_blank">
+										<span class="dashicons dashicons-welcome-view-site"></span>
+										<?php esc_html_e( 'View in Site Editor', 'callandor' ); ?>
+									</a>
 								</div>
 							</div>
 						<?php endforeach; ?>

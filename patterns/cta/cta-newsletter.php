@@ -21,12 +21,12 @@ return array(
 		<div class="wp-block-columns alignwide are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
-			<!-- wp:heading {"level":2,"fontSize":"4xl"} -->
-			<h2 class="wp-block-heading has-4-xl-font-size">' . __( 'Get Weekly Business Growth Insights', 'callandor' ) . '</h2>
+			<!-- wp:heading {"level":2,"textColor":"main","style":{"typography":{"fontSize":"3rem","lineHeight":"1.2"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"fontFamily":"open-sans"} -->
+			<h2 class="wp-block-heading has-main-color has-text-color has-link-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--40);font-size:3rem;line-height:1.2">' . __( 'Get Weekly Business Growth Insights', 'callandor' ) . '</h2>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"fontSize":"lg"} -->
-			<p class="has-lg-font-size">' . __( 'Join 5,000+ business owners receiving actionable strategies, industry trends, and exclusive resources directly to their inbox.', 'callandor' ) . '</p>
+			<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"0"}},"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}},"textColor":"main-accent","fontFamily":"open-sans"} -->
+			<p class="has-main-accent-color has-text-color has-open-sans-font-family" style="margin-bottom:0;font-size:1.125rem;line-height:1.6">' . __( 'Join 5,000+ business owners receiving actionable strategies, industry trends, and exclusive resources directly to their inbox.', 'callandor' ) . '</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -35,8 +35,8 @@ return array(
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%">
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 			<div class="wp-block-buttons">
-				<!-- wp:button {"backgroundColor":"primary","textColor":"base","width":100,"fontSize":"lg"} -->
-				<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-lg-font-size"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button">' . __( 'Subscribe Now', 'callandor' ) . '</a></div>
+				<!-- wp:button {"backgroundColor":"primary","textColor":"base","width":100,"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"radius":"8px"}},"fontSize":"lg","fontFamily":"open-sans"} -->
+				<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-open-sans-font-family has-lg-font-size"><a class="wp-block-button__link has-base-color has-primary-background-color has-text-color has-background wp-element-button" style="border-radius:8px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)">' . __( 'Subscribe Now', 'callandor' ) . '</a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

@@ -40,8 +40,14 @@ composer install --no-dev
 This is a WordPress plugin - test in actual WordPress environment:
 1. Symlink or copy to `wp-content/plugins/callandor`
 2. Activate via WP Admin or `wp plugin activate callandor`
-3. Access admin at **Appearance → Callandor Patterns**
-4. Insert patterns via Block Editor → Patterns tab
+3. Browse patterns at **Appearance → Callandor Patterns**
+4. Preview and insert patterns via **WordPress Site Editor** (`/wp-admin/site-editor.php?p=%2Fpatterns`)
+
+**IMPORTANT - Pattern Preview:**
+- Patterns render perfectly in the native WordPress Site Editor with full theme.json styling
+- This works in Sage 11 hybrid themes (Nynaeve/Moiraine) despite `remove_theme_support('block-templates')`
+- The admin page provides pattern browsing/documentation; Site Editor provides live previews
+- No custom preview implementation needed - WordPress handles it natively
 
 ## Architecture
 
@@ -63,9 +69,10 @@ This is a WordPress plugin - test in actual WordPress environment:
 
 **`Callandor_Admin_Settings` (includes/class-callandor-admin-settings.php)**
 - Creates admin page under Appearance menu
-- Displays pattern library browser grouped by category
+- Displays pattern library browser with metadata (title, description, category, status)
+- Provides "View in Site Editor" links for live pattern previews with theme styling
 - Manages settings (license key placeholder for Phase 2)
-- Shows pattern metadata (slug, status, category)
+- Future home for premium pattern management and licensing features
 
 ### Pattern File Structure
 

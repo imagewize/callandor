@@ -25,6 +25,7 @@
 		init: function() {
 			this.patternCards();
 			this.settingsForm();
+			this.cacheButton();
 		},
 
 		/**
@@ -69,7 +70,7 @@
 				return;
 			}
 
-			// Add validation for license key
+			// Add validation for license key.
 			$('#callandor_license_key').on('input', function() {
 				var value = $(this).val().trim();
 
@@ -78,6 +79,23 @@
 				} else {
 					$(this).css('border-color', '');
 				}
+			});
+		},
+
+		/**
+		 * Handle cache clear button
+		 */
+		cacheButton: function() {
+			var $form = $('#callandor-clear-cache-form');
+			var $btn = $('#callandor-clear-cache-btn');
+
+			if ($form.length === 0 || $btn.length === 0) {
+				return;
+			}
+
+			$form.on('submit', function() {
+				// Add loading state.
+				$btn.addClass('loading').prop('disabled', true);
 			});
 		},
 

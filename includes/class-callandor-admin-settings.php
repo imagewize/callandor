@@ -38,6 +38,7 @@ class Callandor_Admin_Settings {
 	public function init() {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		add_action( 'admin_init', array( $this, 'handle_clear_cache' ) );
 
 		// Initialize pattern loader for pattern listing.
 		$this->pattern_loader = new Callandor_Pattern_Loader();
@@ -140,6 +141,41 @@ class Callandor_Admin_Settings {
 	}
 
 	/**
+	 * Handle clear cache action.
+	 */
+	public function handle_clear_cache() {
+		// Check if clear cache button was clicked.
+		if ( ! isset( $_POST['callandor_clear_cache'] ) ) {
+			return;
+		}
+
+		// Verify nonce.
+		if ( ! isset( $_POST['callandor_clear_cache_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['callandor_clear_cache_nonce'] ) ), 'callandor_clear_cache_action' ) ) {
+			return;
+		}
+
+		// Check user capabilities.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		// Clear the cache.
+		$this->pattern_loader->clear_cache();
+
+		// Redirect with success message.
+		wp_safe_redirect(
+			add_query_arg(
+				array(
+					'page'          => $this->page_slug,
+					'cache-cleared' => '1',
+				),
+				admin_url( 'themes.php' )
+			)
+		);
+		exit;
+	}
+
+	/**
 	 * Render the admin page.
 	 */
 	public function render_admin_page() {
@@ -153,6 +189,16 @@ class Callandor_Admin_Settings {
 				'callandor_messages',
 				'callandor_message',
 				__( 'Settings saved successfully.', 'callandor' ),
+				'success'
+			);
+		}
+
+		// Handle cache cleared message.
+		if ( isset( $_GET['cache-cleared'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			add_settings_error(
+				'callandor_messages',
+				'callandor_cache_cleared',
+				__( 'Pattern cache cleared successfully. Patterns will be reloaded on next page load.', 'callandor' ),
 				'success'
 			);
 		}
@@ -172,6 +218,20 @@ class Callandor_Admin_Settings {
 						do_settings_sections( $this->page_slug );
 						submit_button();
 						?>
+					</form>
+				</div>
+
+				<!-- Cache Management -->
+				<div class="callandor-cache-section">
+					<h2><?php esc_html_e( 'Cache Management', 'callandor' ); ?></h2>
+					<p class="description">
+						<?php esc_html_e( 'Clear the pattern cache to force reload all patterns from files. Useful when developing or modifying patterns.', 'callandor' ); ?>
+					</p>
+					<form method="post" action="">
+						<?php wp_nonce_field( 'callandor_clear_cache_action', 'callandor_clear_cache_nonce' ); ?>
+						<button type="submit" name="callandor_clear_cache" class="button button-secondary" style="margin-top: 10px;">
+							<?php esc_html_e( 'Clear Pattern Cache', 'callandor' ); ?>
+						</button>
 					</form>
 				</div>
 

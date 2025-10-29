@@ -48,11 +48,31 @@ class Callandor_Pattern_Loader {
 	);
 
 	/**
+	 * Cache key for pattern data.
+	 *
+	 * @var string
+	 */
+	private $cache_key = 'callandor_patterns_cache';
+
+	/**
+	 * Cache expiration time (24 hours).
+	 *
+	 * @var int
+	 */
+	private $cache_expiration = DAY_IN_SECONDS;
+
+	/**
 	 * Initialize the pattern loader.
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'register_pattern_categories' ) );
 		add_action( 'init', array( $this, 'register_patterns' ) );
+
+		// Clear cache when plugin is updated.
+		add_action( 'upgrader_process_complete', array( $this, 'clear_cache' ), 10, 2 );
+
+		// Clear cache when switching themes.
+		add_action( 'switch_theme', array( $this, 'clear_cache' ) );
 	}
 
 	/**
@@ -86,23 +106,42 @@ class Callandor_Pattern_Loader {
 			return;
 		}
 
-		$pattern_dirs = glob( CALLANDOR_PLUGIN_DIR . 'patterns/*', GLOB_ONLYDIR );
+		// Try to get cached pattern list.
+		$cached_patterns = get_transient( $this->cache_key );
+
+		if ( false !== $cached_patterns && is_array( $cached_patterns ) ) {
+			// Register patterns from cache.
+			foreach ( $cached_patterns as $pattern_slug => $pattern_properties ) {
+				register_block_pattern( $pattern_slug, $pattern_properties );
+			}
+			return;
+		}
+
+		// No cache found, scan and register patterns.
+		$patterns_to_cache = array();
+		$pattern_dirs      = glob( CALLANDOR_PLUGIN_DIR . 'patterns/*', GLOB_ONLYDIR );
 
 		if ( empty( $pattern_dirs ) ) {
 			return;
 		}
 
 		foreach ( $pattern_dirs as $pattern_dir ) {
-			$this->load_patterns_from_directory( $pattern_dir );
+			$this->load_patterns_from_directory( $pattern_dir, $patterns_to_cache );
+		}
+
+		// Cache the pattern data.
+		if ( ! empty( $patterns_to_cache ) ) {
+			set_transient( $this->cache_key, $patterns_to_cache, $this->cache_expiration );
 		}
 	}
 
 	/**
 	 * Load patterns from a specific directory.
 	 *
-	 * @param string $directory Directory path to scan for patterns.
+	 * @param string $directory        Directory path to scan for patterns.
+	 * @param array  $patterns_to_cache Reference to array storing patterns for caching.
 	 */
-	private function load_patterns_from_directory( $directory ) {
+	private function load_patterns_from_directory( $directory, &$patterns_to_cache = null ) {
 		$pattern_files = glob( $directory . '/*.php' );
 
 		if ( empty( $pattern_files ) ) {
@@ -110,16 +149,17 @@ class Callandor_Pattern_Loader {
 		}
 
 		foreach ( $pattern_files as $pattern_file ) {
-			$this->register_pattern_from_file( $pattern_file );
+			$this->register_pattern_from_file( $pattern_file, $patterns_to_cache );
 		}
 	}
 
 	/**
 	 * Register a single pattern from a file.
 	 *
-	 * @param string $file Pattern file path.
+	 * @param string $file              Pattern file path.
+	 * @param array  $patterns_to_cache Reference to array storing patterns for caching.
 	 */
-	private function register_pattern_from_file( $file ) {
+	private function register_pattern_from_file( $file, &$patterns_to_cache = null ) {
 		$pattern_data = require $file;
 
 		// Validate pattern data.
@@ -154,6 +194,11 @@ class Callandor_Pattern_Loader {
 
 		// Register the pattern.
 		register_block_pattern( $pattern_slug, $pattern_properties );
+
+		// Store pattern for caching if array is provided.
+		if ( null !== $patterns_to_cache ) {
+			$patterns_to_cache[ $pattern_slug ] = $pattern_properties;
+		}
 	}
 
 	/**
@@ -221,5 +266,17 @@ class Callandor_Pattern_Loader {
 		}
 
 		return $patterns;
+	}
+
+	/**
+	 * Clear the pattern cache.
+	 *
+	 * This is called when the plugin is updated or theme is switched.
+	 *
+	 * @param mixed $upgrader_object Upgrader object (unused).
+	 * @param array $options         Upgrader options (unused).
+	 */
+	public function clear_cache( $upgrader_object = null, $options = array() ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+		delete_transient( $this->cache_key );
 	}
 }

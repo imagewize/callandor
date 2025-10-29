@@ -60,14 +60,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added explicit font family declarations (Open Sans)
   - Better margin control for tighter, more professional layout
   - Maintains 60/40 column split with proper alignment
-- **Enhanced Pricing Table Pattern**
-  - Updated heading: 3.5rem font size with 1.1 line-height
-  - Updated subheading: 1.125rem with 1.6 line-height
-  - Improved button styling across all three pricing tiers
-  - Consistent button padding and 8px border radius
-  - Added explicit font family and sizing to all buttons
-  - Better visual consistency with other patterns
-  - All three CTA buttons now have identical styling
+- **Redesigned Pricing Table Pattern** with modern, clean aesthetic
+  - **Typography Overhaul:**
+    - Main heading: "Simple, Transparent Pricing" with 4.5rem bold Montserrat font
+    - Plan titles: Increased to 2.25rem bold with Montserrat for stronger hierarchy
+    - Price display: Dramatic 5rem numbers with styled 1.5rem dollar signs and 1.125rem "/month" text
+    - Feature lists: Larger 1.125rem font with generous 2.0 line-height for readability
+  - **Layout & Spacing:**
+    - Increased card padding from 40 to 50 for more breathing room
+    - Better vertical rhythm with proper spacing between elements
+    - Clean section background changed from tertiary to base (white)
+  - **Visual Design:**
+    - Added 8px rounded corners to all cards for modern aesthetic
+    - Featured card: Thicker 3px primary border (was 2px) for better emphasis
+    - Side cards: Subtle 1px border with same rounded corners
+    - Removed "MOST POPULAR" badge for cleaner, simpler design
+    - All cards now use white/base background (removed primary-accent tint)
+  - **Button Styling:**
+    - Featured card: Solid primary button with clean design
+    - Side cards: Outlined buttons with 2px primary border and primary text
+    - Updated all CTAs to "Start Now" for consistency
+    - Consistent 1rem padding with 8px border radius
+  - **Content Updates:**
+    - Updated plan names: "Starter", "Basic", "Plus"
+    - Updated pricing: $1, $29, $49 (more accessible entry points)
+    - Simplified features to match modern SaaS pricing tables
+    - Focus on website counts, SSL, custom domains, and key features
 
 ### Technical Details
 - **Pattern Caching Implementation**

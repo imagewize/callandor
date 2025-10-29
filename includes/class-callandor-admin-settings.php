@@ -241,7 +241,12 @@ class Callandor_Admin_Settings {
 
 				<!-- Pattern Library Browser -->
 				<div class="callandor-patterns-section">
-					<h2><?php esc_html_e( 'Available Patterns', 'callandor' ); ?></h2>
+					<h2><?php esc_html_e( 'Pattern Library', 'callandor' ); ?></h2>
+					<p class="description">
+						<?php
+						esc_html_e( 'Browse available block patterns below. To preview and insert patterns into your pages, use the WordPress Site Editor pattern browser where patterns render with your actual theme styling.', 'callandor' );
+						?>
+					</p>
 					<?php $this->render_pattern_library(); ?>
 				</div>
 
@@ -333,20 +338,12 @@ class Callandor_Admin_Settings {
 									</span>
 								</div>
 
-								<?php if ( ! empty( $pattern['content'] ) ) : ?>
-									<div class="callandor-pattern-actions">
-										<button type="button" class="button button-small callandor-toggle-preview" data-pattern-slug="<?php echo esc_attr( $pattern['slug'] ); ?>">
-											<span class="dashicons dashicons-visibility"></span>
-											<span class="preview-text"><?php esc_html_e( 'Show Preview', 'callandor' ); ?></span>
-										</button>
-									</div>
-
-									<div class="callandor-pattern-preview" style="display: none;">
-										<div class="callandor-pattern-preview-viewport">
-											<?php echo wp_kses_post( $pattern['content'] ); ?>
-										</div>
-									</div>
-								<?php endif; ?>
+								<div class="callandor-pattern-actions">
+									<a href="<?php echo esc_url( admin_url( 'site-editor.php?p=%2Fpatterns&categoryId=callandor-' . $category_slug ) ); ?>" class="button button-small" target="_blank">
+										<span class="dashicons dashicons-welcome-view-site"></span>
+										<?php esc_html_e( 'View in Site Editor', 'callandor' ); ?>
+									</a>
+								</div>
 							</div>
 						<?php endforeach; ?>
 					</div>

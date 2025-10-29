@@ -12,7 +12,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remote pattern synchronization
 - Auto-update functionality
 - Additional pattern categories
-- Pattern preview in admin interface
 
 ## [1.0.0] - 2025-10-29
 
@@ -41,6 +40,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Modern illustration style for testimonial sections
 
 ### Changed
+- **Simplified Admin Interface** - Removed custom preview system in favor of native WordPress Site Editor
+  - Admin page now focuses on pattern browsing and metadata display
+  - Added "View in Site Editor" buttons linking to native WP pattern browser
+  - Patterns render perfectly with theme.json styling in Site Editor (works in Sage 11 despite `remove_theme_support('block-templates')`)
+  - Removed npm build process and React dependencies
+  - Cleaner, more maintainable codebase with better WordPress integration
+  - Future-proof for Phase 2 features (premium patterns, licensing)
 - **Updated README.md** to clarify theme compatibility
   - Emphasized plugin is for non-block and hybrid themes (like Sage 11)
   - Added clear note that full block themes (FSE) don't need this plugin

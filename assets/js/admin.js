@@ -26,7 +26,6 @@
 			this.patternCards();
 			this.settingsForm();
 			this.cacheButton();
-			this.previewToggles();
 		},
 
 		/**
@@ -97,33 +96,6 @@
 			$form.on('submit', function() {
 				// Add loading state.
 				$btn.addClass('loading').prop('disabled', true);
-			});
-		},
-
-		/**
-		 * Handle pattern preview toggles
-		 */
-		previewToggles: function() {
-			$('.callandor-toggle-preview').on('click', function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-
-				var $btn = $(this);
-				var $card = $btn.closest('.callandor-pattern-card');
-				var $preview = $card.find('.callandor-pattern-preview');
-				var $previewText = $btn.find('.preview-text');
-
-				if ($preview.is(':visible')) {
-					// Hide preview.
-					$preview.slideUp(300);
-					$btn.removeClass('active');
-					$previewText.text('Show Preview');
-				} else {
-					// Show preview.
-					$preview.slideDown(300);
-					$btn.addClass('active');
-					$previewText.text('Hide Preview');
-				}
 			});
 		},
 

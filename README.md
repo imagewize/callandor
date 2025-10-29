@@ -4,13 +4,15 @@
   # Callandor
 </div>
 
-<p> Pattern library for Sage 11 hybrid themes with Tailwind CSS and theme.json support </p>
+<p> Pattern library for non-block and hybrid themes with Tailwind CSS and theme.json support </p>
 
 [![WordPress Version](https://img.shields.io/badge/WordPress-6.6%2B-blue.svg)](https://wordpress.org/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-purple.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**Callandor** is a powerful WordPress block pattern library specifically designed for Sage 11 hybrid themes. Build beautiful, business-focused pages faster with professionally designed patterns that seamlessly integrate with your theme's design system.
+**Callandor** is a WordPress block pattern library plugin specifically designed for non-block and hybrid themes (like Sage 11). Build beautiful, business-focused pages faster with professionally designed patterns that seamlessly integrate with your theme's design system.
+
+> **Note for Block Theme Users:** If you're using a full block theme (FSE theme), you don't need this plugin. Block themes can load patterns directly from the theme's `patterns/` directory without requiring PHP registration. This plugin is specifically for classic themes, hybrid themes, and any theme that cannot load patterns natively.
 
 ## Features
 
@@ -54,9 +56,12 @@ All patterns are fully responsive, use theme.json design tokens, and integrate s
 
 - WordPress 6.6+
 - PHP 8.2+
-- Sage 11 hybrid theme (recommended)
+- Non-block or hybrid theme (classic themes, Sage 11, or any theme without native pattern support)
 - Gutenberg block editor
-- theme.json support
+- theme.json support (recommended for optimal styling)
+
+**Not Required For:**
+- Full block themes (FSE themes) - they have built-in pattern support
 
 ## Installation
 
@@ -180,25 +185,35 @@ composer phpstan
 
 ## Theme Compatibility
 
-### Nynaeve Theme
+### Why This Plugin Exists
 
-Callandor is built specifically for the Nynaeve theme with full integration:
+Block themes (FSE themes) can register patterns directly in their `patterns/` directory without needing PHP. However, **non-block themes, classic themes, and hybrid themes** (like Sage 11) require patterns to be registered via PHP using `register_block_pattern()`. This plugin provides that registration layer.
+
+### Designed For
+
+**Nynaeve Theme** (Primary Target)
+- Built specifically for Nynaeve with full integration
 - All theme.json colors and fonts
 - Tailwind utility classes
 - Responsive spacing system
 
-### Moiraine Theme
+**Moiraine Theme** (Future)
+- Planned compatibility (same architecture as Nynaeve)
 
-Future compatibility planned for Moiraine theme (same architecture as Nynaeve).
+**Other Non-Block/Hybrid Themes**
+- Works with any classic or hybrid theme using:
+  - WordPress block editor (Gutenberg)
+  - theme.json configuration (for optimal styling)
+  - Modern WordPress features
 
-### Other Themes
+Visual results may vary based on your theme's styling and design tokens.
 
-Will work with any theme using:
-- WordPress block editor
-- theme.json configuration
-- Modern WordPress features
+### Not Compatible With
 
-Visual results may vary based on theme styling.
+**Full Block Themes (FSE Themes)**
+- Block themes don't need this plugin
+- They load patterns natively from the theme's `patterns/` directory
+- Examples: Twenty Twenty-Four, Twenty Twenty-Three, etc.
 
 ## Roadmap
 

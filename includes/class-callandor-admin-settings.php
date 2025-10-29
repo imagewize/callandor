@@ -339,7 +339,7 @@ class Callandor_Admin_Settings {
 								</div>
 
 								<div class="callandor-pattern-actions">
-									<a href="<?php echo esc_url( admin_url( 'site-editor.php?p=%2Fpatterns&categoryId=callandor-' . $category_slug ) ); ?>" class="button button-small" target="_blank">
+									<a href="<?php echo esc_url( admin_url( 'site-editor.php?p=%2Fpattern' ) ); ?>" class="button button-small" target="_blank">
 										<span class="dashicons dashicons-welcome-view-site"></span>
 										<?php esc_html_e( 'View in Site Editor', 'callandor' ); ?>
 									</a>

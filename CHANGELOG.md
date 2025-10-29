@@ -7,18 +7,116 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned for 1.0.0 Stable
-- Community testing and feedback
-- Performance optimizations
-- Additional pattern examples
-
 ### Planned for Phase 2
 - Premium pattern library with license key system
 - Remote pattern synchronization
-- Pattern caching with WordPress transients
 - Auto-update functionality
 - Additional pattern categories
 - Pattern preview in admin interface
+
+## [1.0.0] - 2025-10-29
+
+### Added
+- **Pattern Caching System** for improved performance
+  - Patterns are now cached using WordPress transients (24-hour expiration)
+  - Significantly reduces file system scanning overhead on each page load
+  - Cache automatically clears on plugin updates and theme switches
+  - Manual cache clearing via admin interface
+- **Cache Management Interface** in admin settings
+  - New "Cache Management" section under Appearance → Callandor Patterns
+  - Clear cache button for developers and when modifying patterns
+  - Success notification when cache is cleared
+  - Useful for pattern development workflow
+- **New Client Reviews - Orange Background Pattern**
+  - Professional testimonial layout with vibrant orange background (#ff6b35)
+  - Three-column review cards with profile images
+  - White text on orange for high contrast and modern aesthetic
+  - Bundled profile images (DALL-E generated professional portraits)
+  - Responsive design with centered layout (900px max-width)
+  - Perfect for social proof sections and client testimonials
+- **4 New Professional Profile Images** for testimonial patterns
+  - DALL-E generated stylized profile portraits (WebP format)
+  - Professional, diverse representation
+  - Optimized file sizes (18-34KB each)
+  - Modern illustration style for testimonial sections
+
+### Changed
+- **Updated README.md** to clarify theme compatibility
+  - Emphasized plugin is for non-block and hybrid themes (like Sage 11)
+  - Added clear note that full block themes (FSE) don't need this plugin
+  - Explained why this plugin exists (PHP registration layer for classic/hybrid themes)
+  - Better positioning for target audience
+- **Enhanced Contact Information Pattern**
+  - Updated heading typography: 3.5rem font size with 1.1 line-height
+  - Updated subheading: 1.125rem with 1.6 line-height for better readability
+  - Improved button styling with explicit Open Sans font family
+  - Enhanced spacing with proper margin control (bottom: 40)
+  - Modern 8px border radius on CTA button
+  - Better visual hierarchy with improved typography scale
+- **Enhanced CTA Newsletter Pattern**
+  - Updated heading: 3rem font size with 1.2 line-height for better proportion
+  - Updated description: 1.125rem with 1.6 line-height
+  - Improved button styling with consistent padding and border radius
+  - Added explicit font family declarations (Open Sans)
+  - Better margin control for tighter, more professional layout
+  - Maintains 60/40 column split with proper alignment
+- **Enhanced Pricing Table Pattern**
+  - Updated heading: 3.5rem font size with 1.1 line-height
+  - Updated subheading: 1.125rem with 1.6 line-height
+  - Improved button styling across all three pricing tiers
+  - Consistent button padding and 8px border radius
+  - Added explicit font family and sizing to all buttons
+  - Better visual consistency with other patterns
+  - All three CTA buttons now have identical styling
+
+### Technical Details
+- **Pattern Caching Implementation**
+  - Cache key: `callandor_patterns_cache`
+  - Expiration: `DAY_IN_SECONDS` (24 hours)
+  - Storage: WordPress transients (options table)
+  - Auto-clear hooks: `upgrader_process_complete`, `switch_theme`
+  - Manual clear: Admin button with nonce verification
+- **Admin Interface Enhancements**
+  - New `handle_clear_cache()` method with proper nonce verification
+  - Cache status messaging via WordPress admin notices
+  - Security: `manage_options` capability check for cache clearing
+  - Redirect with query parameter for success notification
+- **Pattern Loader Updates**
+  - Modified `register_patterns()` to check cache before scanning files
+  - Updated `load_patterns_from_directory()` to accept cache array reference
+  - Updated `register_pattern_from_file()` to populate cache during registration
+  - New `clear_cache()` public method for external cache clearing
+- **Typography Improvements**
+  - Consistent font sizing across all updated patterns
+  - Explicit line-height declarations for better readability
+  - Font family attributes added where missing
+  - Improved spacing with theme spacing tokens
+
+### Performance
+- **Significant performance improvement** from pattern caching
+  - Eliminates recursive directory scanning on every page load
+  - Reduces file system I/O operations
+  - Faster admin page load times
+  - Better scalability for larger pattern libraries
+
+### Documentation
+- Updated README.md with clearer plugin positioning
+- Added cache management documentation
+- Improved theme compatibility section
+- Clarified target audience (non-block/hybrid themes)
+
+### Release Notes
+This is the first stable 1.0.0 release of Callandor! The plugin is production-ready with:
+- 9 professionally designed patterns
+- Pattern caching for optimal performance
+- Enhanced typography and styling consistency
+- Comprehensive admin interface
+- Full WordPress Coding Standards compliance
+- Tested with Nynaeve theme and WordPress 6.7
+
+**Breaking Changes:** None - fully backward compatible with beta versions
+
+**Upgrade Path:** Automatic - cache will be rebuilt on first load after update
 
 ## [1.0.0-beta.12] - 2025-10-28
 

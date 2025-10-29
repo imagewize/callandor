@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0-beta.12
+Stable tag: 1.0.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,23 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 1.0.0 - 2025-10-29 =
+* First stable release - production ready!
+* Added: Pattern caching system for improved performance (24-hour transients)
+* Added: Cache management interface in admin settings with manual clear button
+* Added: New Client Reviews - Orange Background pattern with vibrant design
+* Added: 4 new DALL-E generated professional profile images for testimonials
+* Changed: Enhanced Contact Information pattern typography and button styling
+* Changed: Enhanced CTA Newsletter pattern with improved typography hierarchy
+* Changed: Enhanced Pricing Table pattern with consistent button styling across all tiers
+* Changed: Updated README.md to clarify plugin is for non-block/hybrid themes
+* Performance: Significant improvement - eliminates recursive directory scanning on every page load
+* Technical: Cache automatically clears on plugin updates and theme switches
+* Technical: New clear_cache() public method with proper nonce verification
+* Compatible: Fully backward compatible with beta versions
+* Tested: With Nynaeve theme and WordPress 6.7
+* Total: 9 professionally designed patterns ready for production use
 
 = 1.0.0-beta.12 - 2025-10-28 =
 * Fixed Hero with CTA pattern button validation error

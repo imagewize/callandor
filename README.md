@@ -18,9 +18,10 @@
 
 - **Theme Integration**: Seamlessly integrates with theme.json colors, typography, and spacing
 - **Tailwind CSS**: Built with Tailwind utility classes for modern, responsive designs
-- **8 Professional Patterns**: Ready-to-use patterns for hero sections, features, CTAs, testimonials, pricing, team, and contact sections
+- **9 Professional Patterns**: Ready-to-use patterns for hero sections, features, CTAs, testimonials, pricing, team, and contact sections
+- **Pattern Caching**: Optimized performance with 24-hour transient caching for faster page loads
 - **Business-Focused**: Designed for SME businesses with focus on conversions and ROI
-- **Easy Management**: Simple admin interface to browse and manage patterns
+- **Easy Management**: Simple admin interface to browse and manage patterns with cache control
 - **Fully Responsive**: Mobile-first designs that look great on all devices
 - **Developer Friendly**: Clean code following WordPress standards with full Composer support
 
@@ -40,6 +41,7 @@ The plugin includes these professionally-designed patterns (all using WordPress 
 
 **Social Proof**
 - **Client Testimonial Cards** - Professional testimonial display with quote, author name, and company in card format
+- **Client Reviews - Orange Background** - Vibrant testimonial section with three reviews on bold orange background with profile images
 
 **E-Commerce & Pricing**
 - **3-Column Pricing Table** - Service package comparison with features list, pricing, and CTA buttons
@@ -103,6 +105,7 @@ Access the pattern management interface:
 - Navigate to **Appearance → Callandor Patterns**
 - View all available patterns organized by category
 - See pattern metadata and slugs
+- Clear pattern cache for development workflow
 - Configure plugin settings (license key for Phase 2)
 
 ### Theme Integration

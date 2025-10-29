@@ -25,6 +25,8 @@
 		init: function() {
 			this.patternCards();
 			this.settingsForm();
+			this.cacheButton();
+			this.previewToggles();
 		},
 
 		/**
@@ -69,7 +71,7 @@
 				return;
 			}
 
-			// Add validation for license key
+			// Add validation for license key.
 			$('#callandor_license_key').on('input', function() {
 				var value = $(this).val().trim();
 
@@ -77,6 +79,50 @@
 					$(this).css('border-color', '#dc3232');
 				} else {
 					$(this).css('border-color', '');
+				}
+			});
+		},
+
+		/**
+		 * Handle cache clear button
+		 */
+		cacheButton: function() {
+			var $form = $('#callandor-clear-cache-form');
+			var $btn = $('#callandor-clear-cache-btn');
+
+			if ($form.length === 0 || $btn.length === 0) {
+				return;
+			}
+
+			$form.on('submit', function() {
+				// Add loading state.
+				$btn.addClass('loading').prop('disabled', true);
+			});
+		},
+
+		/**
+		 * Handle pattern preview toggles
+		 */
+		previewToggles: function() {
+			$('.callandor-toggle-preview').on('click', function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				var $btn = $(this);
+				var $card = $btn.closest('.callandor-pattern-card');
+				var $preview = $card.find('.callandor-pattern-preview');
+				var $previewText = $btn.find('.preview-text');
+
+				if ($preview.is(':visible')) {
+					// Hide preview.
+					$preview.slideUp(300);
+					$btn.removeClass('active');
+					$previewText.text('Show Preview');
+				} else {
+					// Show preview.
+					$preview.slideDown(300);
+					$btn.addClass('active');
+					$previewText.text('Hide Preview');
 				}
 			});
 		},

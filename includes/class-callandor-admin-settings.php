@@ -227,10 +227,14 @@ class Callandor_Admin_Settings {
 					<p class="description">
 						<?php esc_html_e( 'Clear the pattern cache to force reload all patterns from files. Useful when developing or modifying patterns.', 'callandor' ); ?>
 					</p>
-					<form method="post" action="">
+					<form method="post" action="" id="callandor-clear-cache-form">
 						<?php wp_nonce_field( 'callandor_clear_cache_action', 'callandor_clear_cache_nonce' ); ?>
-						<button type="submit" name="callandor_clear_cache" class="button button-secondary" style="margin-top: 10px;">
-							<?php esc_html_e( 'Clear Pattern Cache', 'callandor' ); ?>
+						<button type="submit" name="callandor_clear_cache" class="button button-secondary" id="callandor-clear-cache-btn" style="margin-top: 10px;">
+							<span class="callandor-btn-text"><?php esc_html_e( 'Clear Pattern Cache', 'callandor' ); ?></span>
+							<span class="callandor-btn-loading" style="display: none;">
+								<span class="spinner is-active" style="float: none; margin: 0 5px 0 0;"></span>
+								<?php esc_html_e( 'Clearing Cache...', 'callandor' ); ?>
+							</span>
 						</button>
 					</form>
 				</div>
@@ -315,6 +319,11 @@ class Callandor_Admin_Settings {
 									<h4><?php echo esc_html( $pattern['title'] ); ?></h4>
 									<span class="callandor-pattern-slug"><?php echo esc_html( $pattern['slug'] ); ?></span>
 								</div>
+
+								<?php if ( ! empty( $pattern['description'] ) ) : ?>
+									<p class="callandor-pattern-description"><?php echo esc_html( $pattern['description'] ); ?></p>
+								<?php endif; ?>
+
 								<div class="callandor-pattern-meta">
 									<span class="callandor-pattern-category-badge">
 										<?php echo esc_html( $category_label ); ?>
@@ -323,6 +332,21 @@ class Callandor_Admin_Settings {
 										<?php echo $is_disabled ? esc_html__( 'Disabled', 'callandor' ) : esc_html__( 'Active', 'callandor' ); ?>
 									</span>
 								</div>
+
+								<?php if ( ! empty( $pattern['content'] ) ) : ?>
+									<div class="callandor-pattern-actions">
+										<button type="button" class="button button-small callandor-toggle-preview" data-pattern-slug="<?php echo esc_attr( $pattern['slug'] ); ?>">
+											<span class="dashicons dashicons-visibility"></span>
+											<span class="preview-text"><?php esc_html_e( 'Show Preview', 'callandor' ); ?></span>
+										</button>
+									</div>
+
+									<div class="callandor-pattern-preview" style="display: none;">
+										<div class="callandor-pattern-preview-viewport">
+											<?php echo wp_kses_post( $pattern['content'] ); ?>
+										</div>
+									</div>
+								<?php endif; ?>
 							</div>
 						<?php endforeach; ?>
 					</div>

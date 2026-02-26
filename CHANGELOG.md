@@ -13,6 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-update functionality
 - Additional pattern categories
 
+## [2.0.1] - 2026-02-26
+
+### Fixed
+- **`contact/contact-info.php`: corrected card background color**
+  - Changed all three column card backgrounds from `tertiary` (#f5f5f6 light gray) to `base` (#ffffff white)
+  - Updated block attribute from `"backgroundColor":"tertiary"` to `"backgroundColor":"base"`
+  - Updated CSS classes from `has-tertiary-background-color` to `has-base-background-color`
+  - Aligns pattern with the design specification in `designs/contact_section.html` which uses white card backgrounds
+
 ## [2.0.0] - 2026-02-26
 
 ### Added

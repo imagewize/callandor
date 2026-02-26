@@ -20,6 +20,7 @@ phpstan.neon.dist
 .phpcs.xml.dist
 
 # Documentation (keep README.md and CHANGELOG.md)
+designs/
 docs/
 CLAUDE.md
 

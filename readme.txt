@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,9 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 2.0.1 - 2026-02-26 =
+* Fixed: contact-info pattern card backgrounds changed from tertiary (light gray) to base (white) to match design specification
 
 = 2.0.0 - 2026-02-26 =
 * Added: Comprehensive Pattern Authoring Guidelines in docs/PATTERN-GUIDELINES.md

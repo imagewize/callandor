@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information Section</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #171b23;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            color: #171b23;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .contact-section p {
+            font-size: 1.125rem;
+            color: #465166;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: left;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: #017cb6;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .contact-card p {
+            margin: 0.75rem 0;
+            font-size: 1rem;
+        }
+        
+        .contact-card a {
+            color: #017cb6;
+            text-decoration: none;
+        }
+        
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-card .accent {
+            color: #465166;
+            font-size: 0.875rem;
+        }
+        
+        .schedule-btn {
+            display: inline-block;
+            background-color: #017cb6;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .schedule-btn:hover {
+            background-color: #026492;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-section">
+        <h2>Get In Touch</h2>
+        <p>We're here to help. Reach out and let's discuss how we can support your business goals.</p>
+        
+        <div class="contact-cards">
+            <div class="contact-card">
+                <h3>Office Hours</h3>
+                <p><strong>Monday - Friday</strong></p>
+                <p>9:00 AM - 5:00 PM</p>
+                <p class="accent">Weekend appointments available upon request</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Contact Details</h3>
+                <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a></p>
+                <p><strong>Response time:</strong> Within 24 hours</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3>Visit Us</h3>
+                <p>123 Business Street<br>Suite 100<br>City, State 12345</p>
+                <p class="accent">Free parking available for visitors</p>
+            </div>
+        </div>
+        
+        <a href="#" class="schedule-btn">Schedule a Consultation</a>
+    </div>
+</body>
+</html>

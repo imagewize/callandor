@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.1
+Stable tag: 2.0.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,15 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 2.0.0 - 2026-02-26 =
+* Added: Comprehensive Pattern Authoring Guidelines in docs/PATTERN-GUIDELINES.md
+* Fixed: All patterns now use theme.json font size slugs instead of hardcoded rem values (hero-two-tone, contact-info, cta-newsletter)
+* Fixed: Column border color in testimonial-card now uses proper borderColor attribute to prevent block validation errors
+* Fixed: All patterns with background colors now have margin reset (top/bottom: 0) to prevent gaps between adjacent sections
+* Changed: hero-two-tone H1 uses fontSize "7xl" (4.5rem), contact H2 uses "6xl" (3.75rem), newsletter H2 uses "5xl" (3rem)
+* Technical: All font sizes now selectable via Gutenberg toolbar; no more locked inline style values
+* Tested: All 9 patterns pass PHPCS WordPress Coding Standards validation
 
 = 1.0.1 - 2026-02-26 =
 * Added: Top-level "Callandor" category in block inserter so all patterns are browsable under one category

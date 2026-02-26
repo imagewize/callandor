@@ -13,6 +13,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-update functionality
 - Additional pattern categories
 
+## [2.0.0] - 2026-02-26
+
+### Added
+- **Comprehensive Pattern Authoring Guidelines** (`docs/PATTERN-GUIDELINES.md`)
+  - Native block rules: never use `wp:html` for content that native blocks can handle
+  - Font size slug rules: always use theme.json slugs, never hardcode `rem`/`px` values
+  - Price display guidelines: heading block with `fontSize` slug + relative `50%` span
+  - HTML comment rules: no HTML comments between opening tags and block comments
+  - Block attribute structure: root-level vs. `style` object placement
+  - Image border-radius format: simple string `"radius":"8px"` only
+  - Column border color: `borderColor` attribute required, not `border.color`
+  - Full-width pattern layout: `default` outer + `constrained` inner
+  - Background spacing: margin reset `{"top":"0","bottom":"0"}` required on all background-colored patterns
+  - Pattern image guidelines: bundled WebP files, CALLANDOR_PLUGIN_URL constant, no external URLs
+  - WP-CLI pattern reference instructions
+
+### Fixed
+- **All patterns: replaced hardcoded `rem` font sizes with theme.json font size slugs**
+  - `hero/hero-two-tone.php`: H1 `4.5rem` → `fontSize:"7xl"`; paragraph `1.125rem` → `fontSize:"lg"`
+  - `contact/contact-info.php`: H2 `3.5rem` → `fontSize:"6xl"`; paragraph `1.125rem` → `fontSize:"lg"`
+  - `cta/cta-newsletter.php`: H2 `3rem` → `fontSize:"5xl"` (exact match); paragraph `1.125rem` → `fontSize:"lg"`
+  - Font sizes are now selectable via the Gutenberg toolbar font size picker
+  - Inline `style="font-size:Xrem"` replaced with `has-X-font-size` CSS class
+- **All patterns with background colors: added margin reset**
+  - `hero/hero-two-tone.php`, `hero/hero-with-cta.php`, `contact/contact-info.php`, `cta/cta-newsletter.php`, `features/feature-grid.php`, `team/team-grid.php`
+  - Added `"margin":{"top":"0","bottom":"0"}` to outer group spacing
+  - Prevents `margin-block-start` gaps between adjacent background-color pattern sections
+- **`testimonials/testimonial-card.php`: fixed column border color attribute**
+  - Changed from wrong `"style":{"border":{"color":"#ebeced"}}` to correct `"borderColor":"border-light"`
+  - Added required `has-border-color has-border-light-border-color` CSS classes
+  - Resolves "Block contains unexpected or invalid content" validation errors
+
+### Technical Details
+- Font size slug mapping used (from Nynaeve theme.json): `7xl`=4.5rem, `6xl`=3.75rem, `5xl`=3rem, `lg`=1.125rem
+- All 9 patterns pass WordPress Coding Standards (PHPCS) validation
+- Patterns using `borderColor` attribute (not inline `border.color`) for full Gutenberg compatibility
+- `lineHeight` values retained in `style.typography` (no theme.json preset equivalent)
+
 ## [1.0.1] - 2026-02-26
 
 ### Added

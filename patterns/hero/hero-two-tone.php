@@ -13,20 +13,20 @@ return array(
 	'categories'    => array( 'hero', 'cta' ),
 	'keywords'      => array( 'hero', 'call-to-action', 'landing', 'business', 'header', 'two-tone', 'modern' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","backgroundColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	'content'       => '<!-- wp:group {"align":"full","backgroundColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull has-base-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group">
 		<!-- wp:columns {"align":"wide","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
 		<div class="wp-block-columns alignwide are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-			<!-- wp:heading {"level":1,"textColor":"main","style":{"typography":{"fontSize":"4.5rem","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"fontFamily":"open-sans"} -->
-			<h1 class="wp-block-heading has-main-color has-text-color has-link-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--40);font-size:4.5rem;line-height:1.1">' . __( 'Hero ', 'callandor' ) . '<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-primary-color">' . __( 'Section', 'callandor' ) . '</mark> ' . __( '2.0', 'callandor' ) . '</h1>
+			<!-- wp:heading {"level":1,"textColor":"main","fontSize":"7xl","fontFamily":"open-sans","style":{"typography":{"lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}}} -->
+			<h1 class="wp-block-heading has-main-color has-text-color has-link-color has-open-sans-font-family has-7-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--40);line-height:1.1">' . __( 'Hero ', 'callandor' ) . '<mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-primary-color">' . __( 'Section', 'callandor' ) . '</mark> ' . __( '2.0', 'callandor' ) . '</h1>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}},"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}},"textColor":"main-accent","fontFamily":"open-sans"} -->
-			<p class="has-main-accent-color has-text-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--50);font-size:1.125rem;line-height:1.6">' . __( 'Transform your business with proven strategies that deliver measurable results. Our solutions are designed for ambitious companies ready to scale.', 'callandor' ) . '</p>
+			<!-- wp:paragraph {"fontSize":"lg","fontFamily":"open-sans","textColor":"main-accent","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}},"typography":{"lineHeight":"1.6"}}} -->
+			<p class="has-main-accent-color has-text-color has-open-sans-font-family has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50);line-height:1.6">' . __( 'Transform your business with proven strategies that deliver measurable results. Our solutions are designed for ambitious companies ready to scale.', 'callandor' ) . '</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->

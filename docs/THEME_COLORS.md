@@ -16,6 +16,8 @@ This document lists the color presets available in the Nynaeve theme, which are 
 | `tertiary` | `#f5f5f6` | Tint | Very light gray |
 | `border-light` | `#ebeced` | Border Light | Light border color |
 | `border-dark` | `#cbcbcb` | Border Dark | Darker border color |
+| `accent-orange` | `#f97316` | Accent Orange | Warm orange for vibrant sections (e.g. reviews, CTAs) |
+| `dark` | `#1a2332` | Dark | Dark blue-gray for footer, dark-background sections |
 
 ## Usage in Patterns
 

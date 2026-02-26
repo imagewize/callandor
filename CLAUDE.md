@@ -131,6 +131,8 @@ return array(
 - `secondary` (#98999a) - Gray
 - `tertiary` (#f5f5f6) - Light gray tint
 - `border-light` (#ebeced), `border-dark` (#cbcbcb)
+- `accent-orange` (#f97316) - Warm orange for vibrant sections
+- `dark` (#1a2332) - Dark blue-gray for footer/dark backgrounds
 
 **Typography:**
 - Font families: `open-sans`, `menlo`, `montserrat`

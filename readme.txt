@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,12 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 2.0.2 - 2026-02-26 =
+* Fixed: pricing-table pattern outline buttons now use `backgroundColor:"base"` theme token instead of hardcoded `#ffffff`
+* Fixed: pricing-table pattern `/month` spans now use `var(--wp--preset--color--main-accent)` instead of hardcoded `#465166`
+* Fixed: client-reviews-orange pattern background now uses `backgroundColor:"accent-orange"` theme token instead of hardcoded `#ff6b35`
+* Docs: added `accent-orange` and `dark` color tokens to THEME_COLORS.md and CLAUDE.md color reference
 
 = 2.0.1 - 2026-02-26 =
 * Fixed: contact-info pattern card backgrounds changed from tertiary (light gray) to base (white) to match design specification

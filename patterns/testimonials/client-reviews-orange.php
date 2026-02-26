@@ -13,8 +13,8 @@ return array(
 	'categories'    => array( 'testimonials' ),
 	'keywords'      => array( 'testimonial', 'review', 'client', 'quote', 'social-proof', 'reviews', 'orange', 'profile' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}},"color":{"background":"#ff6b35"}},"textColor":"base","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull has-base-color has-text-color has-background" style="background-color:#ff6b35;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	'content'       => '<!-- wp:group {"align":"full","backgroundColor":"accent-orange","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}}},"textColor":"base","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull has-accent-orange-background-color has-background has-base-color has-text-color" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"layout":{"type":"constrained","wideSize":"900px"}} -->
 	<div class="wp-block-group">
 		<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontWeight":"600"},"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}},"textColor":"base","fontSize":"3xl","fontFamily":"open-sans"} -->

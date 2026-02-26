@@ -6,8 +6,8 @@
 
 <p>Block Pattern Library for the <a href="https://github.com/imagewize/nynaeve">Nynaeve Theme</a></p>
 
-[![WordPress Version](https://img.shields.io/badge/WordPress-6.6%2B-blue.svg)](https://wordpress.org/)
-[![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-purple.svg)](https://php.net/)
+[![Total Downloads](https://img.shields.io/packagist/dt/imagewize/sage-native-block.svg)](https://packagist.org/packages/imagewize/sage-native-block)
+[![Latest Stable Version](https://img.shields.io/packagist/v/imagewize/sage-native-block.svg)](https://packagist.org/packages/imagewize/sage-native-block)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **Callandor** is a WordPress block pattern library plugin built specifically for the **[Nynaeve Theme](https://github.com/imagewize/nynaeve)** by Imagewize. It delivers professionally designed, business-focused block patterns that integrate seamlessly with Nynaeve's `theme.json` design system, Tailwind CSS utility classes, and hybrid theme architecture (Sage 11).

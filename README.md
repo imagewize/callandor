@@ -4,18 +4,21 @@
   # Callandor
 </div>
 
-<p> Pattern library for non-block and hybrid themes with Tailwind CSS and theme.json support </p>
+<p>Block Pattern Library for the <a href="https://github.com/imagewize/nynaeve">Nynaeve Theme</a></p>
 
 [![WordPress Version](https://img.shields.io/badge/WordPress-6.6%2B-blue.svg)](https://wordpress.org/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-purple.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**Callandor** is a WordPress block pattern library plugin specifically designed for non-block and hybrid themes (like Sage 11). Build beautiful, business-focused pages faster with professionally designed patterns that seamlessly integrate with your theme's design system.
+**Callandor** is a WordPress block pattern library plugin built specifically for the **[Nynaeve Theme](https://github.com/imagewize/nynaeve)** by Imagewize. It delivers professionally designed, business-focused block patterns that integrate seamlessly with Nynaeve's `theme.json` design system, Tailwind CSS utility classes, and hybrid theme architecture (Sage 11).
+
+> **Primary Target:** Callandor is built and maintained for the **[Nynaeve Theme](https://github.com/imagewize/nynaeve)**. All patterns are designed, tested, and optimized against Nynaeve's design tokens (colors, typography, and spacing). While the plugin can work with other non-block/hybrid themes that share compatible `theme.json` settings, Nynaeve integration is the primary focus.
 
 > **Note for Block Theme Users:** If you're using a full block theme (FSE theme), you don't need this plugin. Block themes can load patterns directly from the theme's `patterns/` directory without requiring PHP registration. This plugin is specifically for classic themes, hybrid themes, and any theme that cannot load patterns natively.
 
 ## Features
 
+- **Nynaeve-First Design**: All patterns built against Nynaeve's design tokens, color palette, typography, and spacing system
 - **Theme Integration**: Seamlessly integrates with theme.json colors, typography, and spacing
 - **Tailwind CSS**: Built with Tailwind utility classes for modern, responsive designs
 - **9 Professional Patterns**: Ready-to-use patterns for hero sections, features, CTAs, testimonials, pricing, team, and contact sections
@@ -52,18 +55,39 @@ The plugin includes these professionally-designed patterns (all using WordPress 
 **Contact & Info**
 - **Contact Information Section** - Office hours, contact details, and physical address in organized 3-column card layout
 
-All patterns are fully responsive, use theme.json design tokens, and integrate seamlessly with WordPress's native block editor.
+All patterns are fully responsive, use Nynaeve's theme.json design tokens, and integrate seamlessly with WordPress's native block editor.
 
 ## Requirements
 
 - WordPress 6.6+
 - PHP 8.2+
-- Non-block or hybrid theme (classic themes, Sage 11, or any theme without native pattern support)
+- **Nynaeve Theme** (primary) or another non-block/hybrid theme with compatible `theme.json`
 - Gutenberg block editor
-- theme.json support (recommended for optimal styling)
+- theme.json support (required for full styling)
 
 **Not Required For:**
 - Full block themes (FSE themes) - they have built-in pattern support
+
+## Theme Compatibility & Design Tokens
+
+All Callandor patterns are designed and tested against the **Nynaeve Theme** by Imagewize. Patterns rely on specific design tokens (color slugs, font size slugs, font families, and spacing presets) defined in Nynaeve's `theme.json`.
+
+### Nynaeve Design Tokens Used
+
+| Token type | Slugs used |
+|---|---|
+| Colors | `primary`, `primary-accent`, `primary-dark`, `main`, `main-accent`, `base`, `secondary`, `tertiary`, `border-light`, `border-dark` |
+| Font sizes | `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`, `7xl` |
+| Font families | `montserrat`, `open-sans`, `menlo` |
+| Spacing | `20`, `40`, `50`, `60` |
+
+### Using with Other Themes
+
+Callandor can work with other non-block or hybrid themes, but visual appearance may differ if your theme does not define the same design tokens. To adapt patterns to a different theme, either:
+
+1. **Define matching token slugs** in your theme's `theme.json` using the same slug names
+2. **Override pattern styles** via your theme stylesheet after insertion
+3. **Edit the pattern** after inserting — all typography uses WordPress font size slugs so you can change sizes via the block toolbar
 
 ## Installation
 
@@ -110,18 +134,18 @@ Access the pattern management interface:
 
 ### Theme Integration
 
-Patterns automatically use your theme's design tokens from `theme.json`:
+Patterns automatically use Nynaeve's design tokens from `theme.json`:
 
 **Colors:**
-- `primary` - Brand color
-- `primary-accent` - Brand accent
-- `base` - Background color
-- `main` - Text color
+- `primary` (#017cb6) - Brand blue
+- `primary-accent` (#e6f4fb) - Light blue accent
+- `base` (#ffffff) - White background
+- `main` (#171b23) - Text black
 - Additional semantic colors
 
 **Typography:**
-- Font families from theme.json
-- Font sizes (xs through 9xl)
+- Font families: `open-sans`, `montserrat`, `menlo`
+- Font sizes (xs through 7xl)
 - Consistent spacing scale
 
 ## Development
@@ -190,26 +214,22 @@ composer phpstan
 
 ### Why This Plugin Exists
 
-Block themes (FSE themes) can register patterns directly in their `patterns/` directory without needing PHP. However, **non-block themes, classic themes, and hybrid themes** (like Sage 11) require patterns to be registered via PHP using `register_block_pattern()`. This plugin provides that registration layer.
+Block themes (FSE themes) can register patterns directly in their `patterns/` directory without needing PHP. However, **non-block themes, classic themes, and hybrid themes** (like Sage 11 / Nynaeve) require patterns to be registered via PHP using `register_block_pattern()`. This plugin provides that registration layer for Nynaeve and compatible themes.
 
 ### Designed For
 
-**Nynaeve Theme** (Primary Target)
+**[Nynaeve Theme](https://github.com/imagewize/nynaeve)** (Primary Target)
 - Built specifically for Nynaeve with full integration
-- All theme.json colors and fonts
+- All theme.json colors, fonts, and spacing
 - Tailwind utility classes
 - Responsive spacing system
+- Sage 11 hybrid theme architecture
 
-**Moiraine Theme** (Future)
-- Planned compatibility (same architecture as Nynaeve)
-
-**Other Non-Block/Hybrid Themes**
-- Works with any classic or hybrid theme using:
-  - WordPress block editor (Gutenberg)
-  - theme.json configuration (for optimal styling)
-  - Modern WordPress features
-
-Visual results may vary based on your theme's styling and design tokens.
+**Other Non-Block/Hybrid Themes** (Secondary)
+- Works with any classic or hybrid theme that defines matching theme.json tokens
+- WordPress block editor (Gutenberg)
+- theme.json configuration (required for full styling)
+- Visual results vary based on your theme's design tokens
 
 ### Not Compatible With
 
@@ -220,21 +240,21 @@ Visual results may vary based on your theme's styling and design tokens.
 
 ## Roadmap
 
-### Phase 1 (Current - v1.0.0-beta.7)
-- ✅ Local pattern library
+### Phase 1 (Current - v1.0.1)
+- ✅ Local pattern library for Nynaeve Theme
 - ✅ Theme.json integration
 - ✅ Admin interface
-- ✅ 8 professional patterns (Hero, Features, CTA, Testimonials, Pricing, Team, Contact)
+- ✅ 9 professional patterns (Hero, Features, CTA, Testimonials, Pricing, Team, Contact)
 - ✅ Composer support
 - ✅ WordPress Coding Standards compliance
 - ✅ WordPress.org plugin repository ready
 
 ### Phase 2 (Planned)
-- Premium pattern library
+- Premium pattern library (Nynaeve-exclusive patterns)
 - License key system
 - Remote pattern updates
 - Pattern caching
-- Additional categories
+- Additional Nynaeve-focused categories
 
 ### Future
 - Pattern variations
@@ -282,7 +302,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Author**: [Jasper Frumau](https://magewize.com)
 - **Company**: [Imagewize](https://imagewize.com)
-- **Built for**: [Sage 11](https://roots.io/sage/) by Roots.io
+- **Built for**: [Nynaeve Theme](https://github.com/imagewize/nynaeve) on [Sage 11](https://roots.io/sage/) by Roots.io
 - **Inspired by**: Modern block pattern libraries like Spectra
 - **Logo**: Sparkle icon from [Blade UI Kit](https://blade-ui-kit.com/blade-icons/untitledui-star-04) (Untitled UI Star 04)
 
@@ -303,4 +323,4 @@ See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ---
 
-**Made with ❤️ for the WordPress community**
+**Made with love for the Nynaeve Theme and the WordPress community**

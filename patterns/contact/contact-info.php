@@ -13,16 +13,16 @@ return array(
 	'categories'    => array( 'contact' ),
 	'keywords'      => array( 'contact', 'address', 'phone', 'email', 'office', 'hours', 'location' ),
 	'viewportWidth' => 1200,
-	'content'       => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"base","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull has-base-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+	'content'       => '<!-- wp:group {"align":"full","backgroundColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull has-base-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group">
-		<!-- wp:heading {"textAlign":"center","textColor":"main","style":{"typography":{"fontSize":"3.5rem","lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"fontFamily":"open-sans"} -->
-		<h2 class="wp-block-heading has-text-align-center has-main-color has-text-color has-link-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--40);font-size:3.5rem;line-height:1.1">' . __( 'Get In Touch', 'callandor' ) . '</h2>
+		<!-- wp:heading {"textAlign":"center","textColor":"main","fontSize":"6xl","fontFamily":"open-sans","style":{"typography":{"lineHeight":"1.1"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"var:preset|color|main"}}}}} -->
+		<h2 class="wp-block-heading has-text-align-center has-main-color has-text-color has-link-color has-open-sans-font-family has-6-xl-font-size" style="margin-bottom:var(--wp--preset--spacing--40);line-height:1.1">' . __( 'Get In Touch', 'callandor' ) . '</h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}},"typography":{"fontSize":"1.125rem","lineHeight":"1.6"}},"textColor":"main-accent","fontFamily":"open-sans"} -->
-		<p class="has-text-align-center has-main-accent-color has-text-color has-open-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--50);font-size:1.125rem;line-height:1.6">' . __( 'We\'re here to help. Reach out and let\'s discuss how we can support your business goals.', 'callandor' ) . '</p>
+		<!-- wp:paragraph {"align":"center","fontSize":"lg","fontFamily":"open-sans","textColor":"main-accent","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|50"}},"typography":{"lineHeight":"1.6"}}} -->
+		<p class="has-text-align-center has-main-accent-color has-text-color has-open-sans-font-family has-lg-font-size" style="margin-bottom:var(--wp--preset--spacing--50);line-height:1.6">' . __( 'We\'re here to help. Reach out and let\'s discuss how we can support your business goals.', 'callandor' ) . '</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->

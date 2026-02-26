@@ -13,6 +13,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-update functionality
 - Additional pattern categories
 
+## [2.0.2] - 2026-02-26
+
+### Fixed
+- **`pricing/pricing-table.php`: replaced hardcoded hex colors with theme tokens**
+  - Outline buttons on Starter and Plus tiers changed from `"color":{"background":"#ffffff"}` to `"backgroundColor":"base"` theme token
+  - `/month` span color changed from hardcoded `#465166` to `var(--wp--preset--color--main-accent)` in all three pricing tiers
+  - Removes inline `background-color:#ffffff` from button anchor styles; uses `has-base-background-color` class instead
+- **`testimonials/client-reviews-orange.php`: replaced hardcoded background color with theme token**
+  - Changed outer group from `"color":{"background":"#ff6b35"}` to `"backgroundColor":"accent-orange"` theme token
+  - Updated CSS classes from `has-background` (inline) to `has-accent-orange-background-color has-background`
+  - Removes inline `background-color:#ff6b35`; color is now fully driven by theme.json
+
+### Added
+- **`docs/THEME_COLORS.md` and `CLAUDE.md`: documented `accent-orange` and `dark` color tokens**
+  - `accent-orange` (#f97316) - Warm orange for vibrant sections (e.g. reviews, CTAs)
+  - `dark` (#1a2332) - Dark blue-gray for footer/dark-background sections
+
 ## [2.0.1] - 2026-02-26
 
 ### Fixed

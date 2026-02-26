@@ -4,7 +4,7 @@ Tags: patterns, blocks, gutenberg, sage, tailwind, block-patterns, page-builder
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -130,6 +130,10 @@ Pattern placeholder images are sourced from Unsplash (https://unsplash.com) unde
 All images are used for demonstration purposes and can be easily replaced with your own images when using the patterns.
 
 == Changelog ==
+
+= 1.0.1 - 2026-02-26 =
+* Added: Top-level "Callandor" category in block inserter so all patterns are browsable under one category
+* Changed: All patterns now automatically assigned to the "callandor" category in addition to their specific sub-category
 
 = 1.0.0 - 2025-10-29 =
 * First stable release - production ready!

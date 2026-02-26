@@ -24,6 +24,9 @@ class Callandor_Pattern_Loader {
 	 * @var array
 	 */
 	private $categories = array(
+		'callandor'              => array(
+			'label' => 'Callandor',
+		),
 		'callandor-hero'         => array(
 			'label' => 'Hero Sections',
 		),
@@ -204,20 +207,25 @@ class Callandor_Pattern_Loader {
 	/**
 	 * Prepare pattern categories by prefixing with 'callandor-'.
 	 *
+	 * Always includes the top-level 'callandor' category so all patterns
+	 * appear together under the Callandor category in the block inserter.
+	 *
 	 * @param array $pattern_data Pattern data array.
 	 * @return array Prefixed categories.
 	 */
 	private function prepare_categories( $pattern_data ) {
+		// Always include the top-level Callandor category.
+		$prefixed_categories = array( 'callandor' );
+
 		if ( empty( $pattern_data['categories'] ) || ! is_array( $pattern_data['categories'] ) ) {
-			return array();
+			return $prefixed_categories;
 		}
 
-		$prefixed_categories = array();
 		foreach ( $pattern_data['categories'] as $category ) {
 			// Add callandor- prefix if not already present.
 			if ( strpos( $category, 'callandor-' ) === 0 ) {
 				$prefixed_categories[] = $category;
-			} else {
+			} elseif ( 'callandor' !== $category ) {
 				$prefixed_categories[] = 'callandor-' . $category;
 			}
 		}

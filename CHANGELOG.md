@@ -13,6 +13,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Auto-update functionality
 - Additional pattern categories
 
+## [1.0.1] - 2026-02-26
+
+### Added
+- **Top-level "Callandor" category in block inserter**
+  - Registered a new `callandor` pattern category labeled "Callandor"
+  - All patterns are now automatically assigned to this category in addition to their specific sub-category (hero, cta, features, etc.)
+  - Users can filter by "Callandor" in the block inserter Patterns tab to see all Callandor patterns at once
+  - Individual sub-categories (Hero Sections, Call to Action, etc.) remain available for more specific browsing
+
+### Technical Details
+- Added `callandor` entry to the `$categories` array in `Callandor_Pattern_Loader`
+- Updated `prepare_categories()` to always prepend `callandor` to every pattern's category list
+- Guard added to prevent duplicate `callandor` entry if a pattern file explicitly lists it
+
 ## [1.0.0] - 2025-10-29
 
 ### Added

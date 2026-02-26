@@ -32,7 +32,7 @@ return array(
 		<!-- /wp:heading -->
 
 		<!-- wp:heading {"level":4,"textAlign":"center","textColor":"main","fontSize":"6xl","fontFamily":"montserrat","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
-		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$1<span style="font-size:50%;font-weight:400;color:#465166">/month</span></h4>
+		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$1<span style="font-size:50%;font-weight:400;color:var(--wp--preset--color--main-accent)">/month</span></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:separator {"backgroundColor":"border-light","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
@@ -57,8 +57,8 @@ return array(
 
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"textColor":"primary","width":100,"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"radius":"8px","width":"2px"},"color":{"background":"#ffffff"}},"borderColor":"primary","fontSize":"lg","fontFamily":"open-sans"} -->
-			<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-open-sans-font-family has-lg-font-size"><a class="wp-block-button__link has-primary-color has-text-color has-background has-border-color has-primary-border-color wp-element-button" style="border-width:2px;border-radius:8px;background-color:#ffffff;padding-top:1rem;padding-right:var(--wp--preset--spacing--50);padding-bottom:1rem;padding-left:var(--wp--preset--spacing--50)">' . __( 'Start Now', 'callandor' ) . '</a></div>
+			<!-- wp:button {"backgroundColor":"base","textColor":"primary","width":100,"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"radius":"8px","width":"2px"}},"borderColor":"primary","fontSize":"lg","fontFamily":"open-sans"} -->
+			<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-open-sans-font-family has-lg-font-size"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background has-border-color has-primary-border-color wp-element-button" style="border-width:2px;border-radius:8px;padding-top:1rem;padding-right:var(--wp--preset--spacing--50);padding-bottom:1rem;padding-left:var(--wp--preset--spacing--50)">' . __( 'Start Now', 'callandor' ) . '</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
@@ -72,7 +72,7 @@ return array(
 		<!-- /wp:heading -->
 
 		<!-- wp:heading {"level":4,"textAlign":"center","textColor":"main","fontSize":"6xl","fontFamily":"montserrat","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
-		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$29<span style="font-size:50%;font-weight:400;color:#465166">/month</span></h4>
+		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$29<span style="font-size:50%;font-weight:400;color:var(--wp--preset--color--main-accent)">/month</span></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:separator {"backgroundColor":"primary","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
@@ -116,7 +116,7 @@ return array(
 		<!-- /wp:heading -->
 
 		<!-- wp:heading {"level":4,"textAlign":"center","textColor":"main","fontSize":"6xl","fontFamily":"montserrat","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
-		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$49<span style="font-size:50%;font-weight:400;color:#465166">/month</span></h4>
+		<h4 class="wp-block-heading has-text-align-center has-main-color has-text-color has-montserrat-font-family has-6-xl-font-size" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--40)">$49<span style="font-size:50%;font-weight:400;color:var(--wp--preset--color--main-accent)">/month</span></h4>
 		<!-- /wp:heading -->
 
 		<!-- wp:separator {"backgroundColor":"border-light","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|40"}}}} -->
@@ -153,8 +153,8 @@ return array(
 
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"textColor":"primary","width":100,"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"radius":"8px","width":"2px"},"color":{"background":"#ffffff"}},"borderColor":"primary","fontSize":"lg","fontFamily":"open-sans"} -->
-			<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-open-sans-font-family has-lg-font-size"><a class="wp-block-button__link has-primary-color has-text-color has-background has-border-color has-primary-border-color wp-element-button" style="border-width:2px;border-radius:8px;background-color:#ffffff;padding-top:1rem;padding-right:var(--wp--preset--spacing--50);padding-bottom:1rem;padding-left:var(--wp--preset--spacing--50)">' . __( 'Start Now', 'callandor' ) . '</a></div>
+			<!-- wp:button {"backgroundColor":"base","textColor":"primary","width":100,"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}},"border":{"radius":"8px","width":"2px"}},"borderColor":"primary","fontSize":"lg","fontFamily":"open-sans"} -->
+			<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-open-sans-font-family has-lg-font-size"><a class="wp-block-button__link has-primary-color has-base-background-color has-text-color has-background has-border-color has-primary-border-color wp-element-button" style="border-width:2px;border-radius:8px;padding-top:1rem;padding-right:var(--wp--preset--spacing--50);padding-bottom:1rem;padding-left:var(--wp--preset--spacing--50)">' . __( 'Start Now', 'callandor' ) . '</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
